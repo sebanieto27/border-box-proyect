@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Administracion;
 
 use App\Http\Controllers\Controller;
+use App\Producto;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -12,9 +13,17 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        if ($request)
+        {
+            $query = trim($request->get('search'));
+            $productos=Producto::where('nombre', 'LIKE', '%' .$query. '%')
+                                  ->orderBy('id', 'asc')
+                                  ->paginate(10);
+
+            return view('administracion.productos.list', ['productos' => $productos, 'search' => $query]);
+        }
     }
 
     /**
@@ -24,7 +33,8 @@ class ProductoController extends Controller
      */
     public function create()
     {
-        //
+        $productos = Producto::all();
+        return view('administracion.producto.create', compact('productos'));
     }
 
     /**
@@ -35,7 +45,23 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate(
+            [   'nombre' => 'required',
+                'fotoPrincipal' => 'required',
+                'descripcion' => 'required',
+                'precio' => 'required',
+            ], ['nombre.required' => __('El nombre del producto es obligatorio.'),
+                'fotoPrincipal.required' => __('La foto del producto es obligatoria.'),
+                'descripcion.required' => __('La descripcion del producto es obligatoria.'),
+                'precio.required' => __('El precio del producto es obligatorio.'),
+                ]
+        );
+
+        $data = request()->all();
+
+        Producto::create($data);
+
+        return redirect('administracion')->with('Mensaje', 'Producto agregado con éxito');
     }
 
     /**

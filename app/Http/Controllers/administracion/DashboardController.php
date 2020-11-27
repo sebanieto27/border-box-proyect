@@ -16,11 +16,6 @@ class DashboardController extends Controller
     {
         return view('administracion.index');
     }
-
-
-    public function addProduct() {
-        return view('administracion.addProduct');
-    }
     /**
      * Show the form for creating a new resource.
      *

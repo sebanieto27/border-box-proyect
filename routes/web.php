@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'IndexController@index');
 
+// |--------------------------------------------------------------------------
+// | RUTAS DE ADMINISTRACION
+// |--------------------------------------------------------------------------
 Route::resource('administracion', 'administracion\DashboardController');
-Route::get('agregar-producto', 'administracion\DashboardController@addProduct')->name('addProduct');
+
+Route::resource('productos', 'administracion\ProductoController');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

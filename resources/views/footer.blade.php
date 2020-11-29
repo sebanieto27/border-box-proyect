@@ -1,3 +1,4 @@
+@extends('head')
 @section('footer')
 
 <!-- Footer-->

@@ -166,99 +166,25 @@
               </div>
               <div class="card-body">
                 <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-                  <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">Createx Std. </a>in <a class="product-meta font-weight-medium" href="#">UI Design</a></div>
+                  <div class="text-muted font-size-xs mr-1"><a class="product-meta font-weight-medium" href="#">{{$producto->marca}}</a></div>
                   <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star"></i>
                   </div>
                 </div>
-                <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Square Style Mobile UI Kit (Sketch)</a></h3>
+                <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">{{$producto->nombre}}</a></h3>
                 <div class="d-flex flex-wrap justify-content-between align-items-center">
-                  <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>153<span class="font-size-xs ml-1">Sales</span></div>
-                  <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$24.<small>00</small></div>
+                  <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i><span class="font-size-xs ml-1">Notebooks</span></div>
+                  <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">${{$producto->precio}},<small>00</small></div>
                 </div>
               </div>
             </div>
           </div> 
         @endforeach
-        
+
       </div>
       <!-- More button-->
-      <div class="text-center"><a class="btn btn-outline-accent" href="marketplace-category.html">View more products<i class="czi-arrow-right font-size-ms ml-1"></i></a></div>
+      <div class="text-center"><a class="btn btn-outline-accent" href="marketplace-category.html">Ver más productos<i class="czi-arrow-right font-size-ms ml-1"></i></a></div>
     </section>
-    <!-- Seller of the month-->
-    <section class="border-top py-5">
-      <div class="container py-lg-2">
-        <h2 class="h3 mb-3 pb-3 pb-lg-4 text-center">Seller of the month</h2>
-        <div class="row">
-          <div class="col-lg-4 text-center text-lg-left pb-3 pt-lg-2">
-            <div class="d-inline-block text-left">
-              <div class="media media-ie-fix align-items-center pb-3">
-                <div class="img-thumbnail rounded-circle position-relative" style="width: 6.375rem;"><img class="rounded-circle" src="img/marketplace/account/avatar.png" alt="TemplateHouse"></div>
-                <div class="media-body pl-3">
-                  <h3 class="font-size-lg mb-0">TemplateHouse</h3><span class="d-block text-muted font-size-ms pt-1 pb-2">Member since November 2017</span><a class="btn btn-primary btn-sm" href="marketplace-vendor.html">View products</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="cz-carousel">
-              <div class="cz-carousel-inner" data-carousel-options="{&quot;items&quot;: 2, &quot;gutter&quot;: 16, &quot;controls&quot;: false, &quot;nav&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3}}}">
-                <div>
-                  <div class="card product-card-alt">
-                    <div class="product-thumb">
-                      <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-                      <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
-                        <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-                      </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="img/marketplace/products/13.jpg" alt="Product">
-                    </div>
-                    <div class="card-body">
-                      <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Hardcover Book Catalog Mockup</a></h3>
-                      <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>39<span class="font-size-xs ml-1">Sales</span></div>
-                        <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$12.<small>00</small></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="card product-card-alt">
-                    <div class="product-thumb">
-                      <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-                      <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
-                        <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-                      </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="img/marketplace/products/14.jpg" alt="Product">
-                    </div>
-                    <div class="card-body">
-                      <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Top View Smartwatch 3D Render</a></h3>
-                      <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>28<span class="font-size-xs ml-1">Sales</span></div>
-                        <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$14.<small>00</small></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="card product-card-alt">
-                    <div class="product-thumb">
-                      <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-                      <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
-                        <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-                      </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="img/marketplace/products/07.jpg" alt="Product">
-                    </div>
-                    <div class="card-body">
-                      <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Gravity Device Mockups (PSD)</a></h3>
-                      <div class="d-flex flex-wrap justify-content-between align-items-center">
-                        <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>234<span class="font-size-xs ml-1">Sales</span></div>
-                        <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$16.<small>00</small></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <!-- Marketplace features-->
     <section class="bg-accent bg-size-cover bg-position-center pt-5 pb-4 pb-lg-5" style="background-image: url(img/marketplace/features/features-bg.jpg);">
       <div class="container pt-lg-3">
@@ -357,120 +283,5 @@
         <div class="toast-body">This item has been added to your cart.</div>
       </div>
     </div>
-    <!-- Footer-->
-    <footer class="bg-dark pt-5">
-      <div class="container pt-2 pb-3">
-        <div class="row">
-          <div class="col-md-6 text-center text-md-left mb-4">
-            <div class="text-nowrap mb-3"><a class="d-inline-block align-middle mt-n2 mr-2" href="#"><img class="d-block" width="117" src="img/footer-logo-light.png" alt="Pickbazar"/></a><span class="d-inline-block align-middle h5 font-weight-light text-white mb-0">Marketplace</span></div>
-            <p class="font-size-sm text-white opacity-70 pb-1">High quality items created by our global community.</p>
-            <h6 class="d-inline-block pr-3 mr-3 border-right border-light"><span class="text-primary">65,478 </span><span class="font-weight-normal text-white">Products</span></h6>
-            <h6 class="d-inline-block pr-3 mr-3 border-right border-light"><span class="text-primary">2,521 </span><span class="font-weight-normal text-white">Members</span></h6>
-            <h6 class="d-inline-block mr-3"><span class="text-primary">897 </span><span class="font-weight-normal text-white">Vendors</span></h6>
-            <div class="widget mt-4 text-md-nowrap text-center text-md-left"><a class="social-btn sb-light sb-twitter mr-2 mb-2" href="#"><i class="czi-twitter"></i></a><a class="social-btn sb-light sb-facebook mr-2 mb-2" href="#"><i class="czi-facebook"></i></a><a class="social-btn sb-light sb-dribbble mr-2 mb-2" href="#"><i class="czi-dribbble"></i></a><a class="social-btn sb-light sb-behance mr-2 mb-2" href="#"><i class="czi-behance"></i></a><a class="social-btn sb-light sb-pinterest mr-2 mb-2" href="#"><i class="czi-pinterest"></i></a></div>
-          </div>
-          <!-- Mobile dropdown menu (visible on screens below md)-->
-          <div class="col-12 d-md-none text-center mb-4 pb-2">
-            <div class="btn-group dropdown d-block mx-auto mb-3">
-              <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">Categories</button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Photos</a></li>
-                <li><a class="dropdown-item" href="#">Graphics</a></li>
-                <li><a class="dropdown-item" href="#">UI Design</a></li>
-                <li><a class="dropdown-item" href="#">Web Themes</a></li>
-                <li><a class="dropdown-item" href="#">Fonts</a></li>
-                <li><a class="dropdown-item" href="#">Add-Ons</a></li>
-              </ul>
-            </div>
-            <div class="btn-group dropdown d-block mx-auto">
-              <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">For members</button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Licenses</a></li>
-                <li><a class="dropdown-item" href="#">Return policy</a></li>
-                <li><a class="dropdown-item" href="#">Payment methods</a></li>
-                <li><a class="dropdown-item" href="#">Become a vendor</a></li>
-                <li><a class="dropdown-item" href="#">Become an affiliate</a></li>
-                <li><a class="dropdown-item" href="#">Marketplace benefits</a></li>
-              </ul>
-            </div>
-          </div>
-          <!-- Desktop menu (visible on screens above md)-->
-          <div class="col-md-3 d-none d-md-block text-center text-md-left mb-4">
-            <div class="widget widget-links widget-light pb-2">
-              <h3 class="widget-title text-light">Categories</h3>
-              <ul class="widget-list">
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Photos</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Graphics</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">UI Design</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Web Themes</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Fonts</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Add-Ons</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3 d-none d-md-block text-center text-md-left mb-4">
-            <div class="widget widget-links widget-light pb-2">
-              <h3 class="widget-title text-light">For members</h3>
-              <ul class="widget-list">
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Licenses</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Return policy</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Payment methods</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Become a vendor</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Become an affiliate</a></li>
-                <li class="widget-list-item"><a class="widget-list-link" href="#">Marketplace benefits</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Second row-->
-      <div class="pt-5 bg-darker">
-        <div class="container">
-          <div class="widget w-100 mb-4 pb-3 text-center mx-auto" style="max-width: 28rem;">
-            <h3 class="widget-title text-light pb-1">Subscribe to newsletter</h3>
-            <form class="validate" action="https://studio.us12.list-manage.com/subscribe/post-json?u=c7103e2c981361a6639545bd5&amp;amp;id=29ca296126&amp;c=?" method="get" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form">
-              <div class="input-group input-group-overlay flex-nowrap">
-                <div class="input-group-prepend-overlay"><span class="input-group-text text-muted font-size-base"><i class="czi-mail"></i></span></div>
-                <input class="form-control prepended-form-control" type="email" name="EMAIL" id="mce-EMAIL" value="" placeholder="Your email" required>
-                <div class="input-group-append">
-                  <button class="btn btn-primary" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe*</button>
-                </div>
-              </div>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_c7103e2c981361a6639545bd5_29ca296126" tabindex="-1">
-              </div><small class="form-text text-light opacity-50" id="mc-helper">*Receive early discount offers, updates and new products info.</small>
-              <div class="subscribe-status"></div>
-            </form>
-          </div>
-          <hr class="hr-light pb-4 mb-3">
-          <div class="d-md-flex justify-content-between">
-            <div class="pb-4 font-size-xs text-light opacity-50 text-center text-md-left">© All rights reserved. Made by <a class="text-light" href="https://templatehouse.net/" target="_blank">TemplateHouse</a></div>
-            <div class="widget widget-links widget-light pb-4">
-              <ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
-                <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Help Center</a></li>
-                <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Affiliates</a></li>
-                <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Support</a></li>
-                <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Terms &amp; Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Toolbar for handheld devices-->
-    <div class="cz-handheld-toolbar">
-      <div class="d-table table-fixed w-100"><a class="d-table-cell cz-handheld-toolbar-item" href="account-wishlist.html"><span class="cz-handheld-toolbar-icon"><i class="czi-heart"></i></span><span class="cz-handheld-toolbar-label">Wishlist</span></a><a class="d-table-cell cz-handheld-toolbar-item" href="#navbarCollapse" data-toggle="collapse" onclick="window.scrollTo(0, 0)"><span class="cz-handheld-toolbar-icon"><i class="czi-menu"></i></span><span class="cz-handheld-toolbar-label">Menu</span></a><a class="d-table-cell cz-handheld-toolbar-item" href="shop-cart.html"><span class="cz-handheld-toolbar-icon"><i class="czi-cart"></i><span class="badge badge-primary badge-pill ml-1">4</span></span><span class="cz-handheld-toolbar-label">$265.00</span></a>
-      </div>
-    </div>
-    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">   </i></a>
-    <!-- JavaScript libraries, plugins and custom scripts-->
-    <script src="js/vendor.min.js"></script>
-    <script src="js/theme.min.js"></script>
   </body>
-
-
-
 @endsection
-  
-</html>

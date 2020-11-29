@@ -32,58 +32,14 @@
     <section class="container position-relative pt-3 pt-lg-0 pb-5 mt-lg-n10" style="z-index: 10;">
       <div class="card px-lg-2 border-0 box-shadow-lg">
         <div class="card-body px-4 pt-5 pb-4">
-          <h2 class="h3 text-center">Discover featured products</h2>
-          <p class="text-muted text-center">Every week we hand-pick some of the best items from our collection</p>
+          <h2 class="h3 text-center">Nuestros recomendados</h2>
+          <p class="text-muted text-center">Cada semana seleccionamos a mano algunos de los mejores artículos de nuestra colección</p>
           <!-- Carousel-->
           <div class="cz-carousel pt-4">
             <div class="cz-carousel-inner" data-carousel-options="{&quot;items&quot;: 2, &quot;gutter&quot;: 15, &quot;controls&quot;: false, &quot;nav&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2},&quot;768&quot;:{&quot;items&quot;:3}, &quot;992&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 30}}}">
+              
               <!-- Product-->
-              <div>
-                <div class="card product-card-alt">
-                  <div class="product-thumb">
-                    <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-                    <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
-                      <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-                    </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="img/marketplace/products/02.jpg" alt="Product">
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-                      <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">Createx Std. </a>in <a class="product-meta font-weight-medium" href="#">Graphics</a></div>
-                      <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i>
-                      </div>
-                    </div>
-                    <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Floating Phone and Tablet Mockup (PSD)</a></h3>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                      <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>109<span class="font-size-xs ml-1">Sales</span></div>
-                      <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$15.<small>00</small></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Product-->
-              <div>
-                <div class="card product-card-alt">
-                  <div class="product-thumb">
-                    <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-                    <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
-                      <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-                    </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="img/marketplace/products/03.jpg" alt="Product">
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-                      <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">Createx Std. </a>in <a class="product-meta font-weight-medium" href="#">Graphics</a></div>
-                      <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star"></i>
-                      </div>
-                    </div>
-                    <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Project Devices Showcase (PSD)</a></h3>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                      <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>95<span class="font-size-xs ml-1">Sales</span></div>
-                      <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$18.<small>00</small></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Product-->
+              @foreach ($productos as $producto)
               <div>
                 <div class="card product-card-alt">
                   <div class="product-thumb">
@@ -106,29 +62,10 @@
                   </div>
                 </div>
               </div>
+              @endforeach
+              
               <!-- Product-->
-              <div>
-                <div class="card product-card-alt">
-                  <div class="product-thumb">
-                    <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-                    <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
-                      <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-                    </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="img/marketplace/products/07.jpg" alt="Product">
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-                      <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">pixels </a>in <a class="product-meta font-weight-medium" href="#">Graphics</a></div>
-                      <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star"></i>
-                      </div>
-                    </div>
-                    <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Gravity Device Mockups (PSD)</a></h3>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                      <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>234<span class="font-size-xs ml-1">Sales</span></div>
-                      <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$16.<small>00</small></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -138,7 +75,7 @@
     <section class="container pb-5 mb-lg-3">
       <!-- Heading-->
       <div class="d-flex flex-wrap justify-content-between align-items-center pt-1 border-bottom pb-4 mb-4">
-        <h2 class="h3 mb-0 pt-3 mr-2">Nuestras notebooks recomendadas</h2>
+        <h2 class="h3 mb-0 pt-3 mr-2">Notebooks recomendadas</h2>
         {{-- <div class="pt-3">
           <select class="custom-select">
             <option>All categories</option>

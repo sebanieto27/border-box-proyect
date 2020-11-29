@@ -1,129 +1,243 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 
 <head>
-    <meta charset="utf-8">
-    <title>BorderBox | Tu nueva notebook esta aquí
-    </title>
-    <!-- SEO Meta Tags-->
-    <meta name="description" content="BorderBox | Tu nueva notebook esta aquí">
-    <meta name="keywords" content="BorderBox, notebook, cordoba, carlos paz">
-    <meta name="author" content="Clickando">
-    <!-- Viewport-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon and Touch Icons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="{{asset ('image/png')}}" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="{{asset ('image/png')}}" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="*">
-    <link rel="mask-icon" color="#fe6a6a" href="safari-pinned-tab.svg">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    <!-- Vendor Styles including: Font Icons, Plugins, etc.-->
-    <link rel="stylesheet" media="screen" href="{{asset ('css/vendor.min.css')}}">
-    <!-- Main Theme Styles + Bootstrap-->
-    <link rel="stylesheet" media="screen" id="main-styles" href="{{asset ('css/theme.min.css')}}">
-    <!-- Google Tag Manager-->
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'http://html.templatehouse.net/www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-WKV3GT5');
-    </script>
-  </head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1,
+			shrink-to-fit=no" name="viewport">
+	<title>Aegis - Admin Dashboard Template</title>
+	<!-- General CSS Files -->
+	<link rel="stylesheet" href="{{asset ('assets/css/app.min.css')}}">
+	<!-- Template CSS -->
+	<link rel="stylesheet" href="{{asset ('assets/css/style.css')}}">
+	<link rel="stylesheet" href="{{asset ('assets/css/components.css')}}">
+	<!-- Custom style CSS -->
+	<link rel="stylesheet" href="{{asset ('assets/css/custom.css')}}">
+	<link rel='shortcut icon' type='image/x-icon' href="{{asset ('assets/img/favicon.ico')}}" />
+</head>
 
-  <header class="bg-light box-shadow-sm navbar-sticky">
-    <div class="navbar navbar-expand-lg navbar-light">
-      <div class="container"><a class="navbar-brand d-none d-sm-block mr-4 order-lg-1" href="index-2.html" style="min-width: 7rem;"><img width="175" src="img/logo-borderBox.svg" alt="Pickbazar"/></a><a class="navbar-brand d-sm-none mr-2 order-lg-1" href="index-2.html" style="min-width: 4.625rem;"><img width="74" src="img/logo-borderBox.svg" alt="Pickbazar"/></a>
-        <!-- Toolbar-->
-        <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-          <div class="navbar-tool dropdown ml-2">
-            <a class="navbar-tool-icon-box border dropdown-toggle" href="dashboard-sales.html"><img width="32" src="img/marketplace/account/avatar-sm.png" alt="TemplateHouse"/></a>
-            <a class="navbar-tool-text ml-n1" href="dashboard-sales.html">Usuario</a>
-              <div class="dropdown-menu dropdown-menu-right" style="min-width: 14rem;">
-                <h6 class="dropdown-header">Account</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-settings.html"><i class="czi-settings opacity-60 mr-2"></i>Settings</a><a class="dropdown-item d-flex align-items-center" href="dashboard-purchases.html"><i class="czi-basket opacity-60 mr-2"></i>Purchases</a><a class="dropdown-item d-flex align-items-center" href="dashboard-favorites.html"><i class="czi-heart opacity-60 mr-2"></i>Favorites<span class="font-size-xs text-muted ml-auto">4</span></a>
-                <div class="dropdown-divider"></div>
-                <h6 class="dropdown-header">Seller Dashboard</h6><a class="dropdown-item d-flex align-items-center" href="dashboard-sales.html">
-                  <i class="czi-dollar opacity-60 mr-2"></i>Sales<span class="font-size-xs text-muted ml-auto">$1,375.00</span></a><a class="dropdown-item d-flex align-items-center" href="dashboard-products.html"><i class="czi-package opacity-60 mr-2"></i>Products<span class="font-size-xs text-muted ml-auto">5</span></a><a class="dropdown-item d-flex align-items-center" href=""><i class="czi-cloud-upload opacity-60 mr-2"></i>Add New Product</a>
-                  <a class="dropdown-item d-flex align-items-center" href=""><i class="czi-currency-exchange opacity-60 mr-2"></i>Payouts</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item d-flex align-items-center" href="account-signin.html"><i class="czi-sign-out opacity-60 mr-2"></i>Sign Out</a>
-              </div>
-          </div>
-        </div>
-        <div class="collapse navbar-collapse mr-auto order-lg-2" id="navbarCollapse">
-          <!-- Search-->
-          <div class="input-group-overlay d-lg-none my-3">
-            <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
-            <input class="form-control prepended-form-control" type="text" placeholder="Search marketplace">
-          </div>
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="*">Sistema administrativo</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Search collapse-->
-</header>
-
-<div class="page-title-overlap bg-accent pt-4">
-  <div class="container d-flex flex-wrap flex-sm-nowrap justify-content-center justify-content-sm-between align-items-center pt-2">
-      <div class="media media-ie-fix align-items-center pb-3">
-          <div class="img-thumbnail rounded-circle position-relative" style="width: 6.375rem;"><img class="rounded-circle" src="img/marketplace/account/avatar.png" alt="TemplateHouse"></div>
-          <div class="media-body pl-3">
-          <h3 class="text-light font-size-lg mb-0">Sistema administrativo</h3><span class="d-block text-light font-size-ms opacity-60 py-1">bordeBox - Del mundo a tus manos</span>
-          </div>
-      </div>
-      <div class="d-flex">
-          <div class="text-sm-right mr-5">
-              <div class="text-light font-size-base">Total sales</div>
-              <h3 class="text-light">426</h3>
-          </div>
-          <div class="text-sm-right">
-              <div class="text-light font-size-base">Seller rating</div>
-              <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star"></i></div>
-              <div class="text-light opacity-60 font-size-xs">Based on 98 reviews</div>
-          </div>
-      </div>
-  </div>
-</div>
-
-<div class="container mb-5 pb-3">
-  <div class="bg-light box-shadow-lg rounded-lg overflow-hidden">
-    <div class="row">
-      <!-- Sidebar-->
-      <aside class="col-lg-4">
-        <!-- Account menu toggler (hidden on screens larger 992px)-->
-        <div class="d-block d-lg-none p-4"><a class="btn btn-outline-accent d-block" href="#account-menu" data-toggle="collapse"><i class="czi-menu mr-2"></i>Account menu</a></div>
-        <!-- Actual menu-->
-        <div class="cz-sidebar-static h-100 p-0">
-          <div class="secondary-nav collapse border-right" id="account-menu">
-            <div class="bg-secondary p-4">
-              <h3 class="font-size-sm mb-0 text-muted">Account</h3>
-            </div>
-            <ul class="list-unstyled mb-0">
-              <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-settings.html"><i class="czi-settings opacity-60 mr-2"></i>Settings</a></li>
-              <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-purchases.html"><i class="czi-basket opacity-60 mr-2"></i>Purchases</a></li>
-              <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-favorites.html"><i class="czi-heart opacity-60 mr-2"></i>Favorites<span class="font-size-sm text-muted ml-auto">4</span></a></li>
-            </ul>
-            <div class="bg-secondary p-4">
-              <h3 class="font-size-sm mb-0 text-muted">Seller Dashboard</h3>
-            </div>
-            <ul class="list-unstyled mb-0">
-              <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-sales.html"><i class="czi-dollar opacity-60 mr-2"></i>Sales<span class="font-size-sm text-muted ml-auto">$1,375.00</span></a></li>
-              <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-products.html"><i class="czi-package opacity-60 mr-2"></i>Products<span class="font-size-sm text-muted ml-auto">5</span></a></li>
-              <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="{{route ('productos.create')}}"><i class="czi-cloud-upload opacity-60 mr-2"></i>Add New Product</a></li>
-              <li class="border-bottom mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="dashboard-payouts.html"><i class="czi-currency-exchange opacity-60 mr-2"></i>Payouts</a></li>
-              <li class="mb-0"><a class="nav-link-style d-flex align-items-center px-4 py-3" href="account-signin.html"><i class="czi-sign-out opacity-60 mr-2"></i>Sign out</a></li>
-            </ul>
-          </div>
-        </div>
-      </aside>
+<body>
+	<div class="loader"></div>
+	<div id="app">
+		<div class="main-wrapper main-wrapper-1">
+			<div class="navbar-bg"></div>
+			<nav class="navbar navbar-expand-lg main-navbar">
+				<div class="form-inline mr-auto">
+					<ul class="navbar-nav mr-3">
+						<li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg
+									collapse-btn"> <i data-feather="align-justify"></i></a></li>
+						<li><a href="#" class="nav-link nav-link-lg fullscreen-btn">
+								<i data-feather="maximize"></i>
+							</a></li>
+						<li>
+							<form class="form-inline mr-auto">
+								<div class="search-element">
+									<input class="form-control" type="search" placeholder="Search" aria-label="Search"
+										data-width="200">
+									<button class="btn" type="submit">
+										<i class="fas fa-search"></i>
+									</button>
+								</div>
+							</form>
+						</li>
+					</ul>
+				</div>
+				<ul class="navbar-nav navbar-right">
+					<li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+							class="nav-link nav-link-lg message-toggle"><i data-feather="mail"></i>
+							<span class="badge headerBadge1">
+								6 </span> </a>
+						<div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+							<div class="dropdown-header">
+								Messages
+								<div class="float-right">
+									<a href="#">Mark All As Read</a>
+								</div>
+							</div>
+							<div class="dropdown-list-content dropdown-list-message">
+								<a href="#" class="dropdown-item"> <span class="dropdown-item-avatar
+											text-white"> <img alt="image" src="assets/img/users/user-1.png" class="rounded-circle">
+									</span> <span class="dropdown-item-desc"> <span class="message-user">John
+											Deo</span>
+										<span class="time messege-text">Please check your mail !!</span>
+										<span class="time">2 Min Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+										<img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+									</span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
+											Smith</span> <span class="time messege-text">Request for leave
+											application</span>
+										<span class="time">5 Min Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+										<img alt="image" src="assets/img/users/user-5.png" class="rounded-circle">
+									</span> <span class="dropdown-item-desc"> <span class="message-user">Jacob
+											Ryan</span> <span class="time messege-text">Your payment invoice is
+											generated.</span> <span class="time">12 Min Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+										<img alt="image" src="assets/img/users/user-4.png" class="rounded-circle">
+									</span> <span class="dropdown-item-desc"> <span class="message-user">Lina
+											Smith</span> <span class="time messege-text">hii John, I have upload
+											doc
+											related to task.</span> <span class="time">30
+											Min Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+										<img alt="image" src="assets/img/users/user-3.png" class="rounded-circle">
+									</span> <span class="dropdown-item-desc"> <span class="message-user">Jalpa
+											Joshi</span> <span class="time messege-text">Please do as specify.
+											Let me
+											know if you have any query.</span> <span class="time">1
+											Days Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span class="dropdown-item-avatar text-white">
+										<img alt="image" src="assets/img/users/user-2.png" class="rounded-circle">
+									</span> <span class="dropdown-item-desc"> <span class="message-user">Sarah
+											Smith</span> <span class="time messege-text">Client Requirements</span>
+										<span class="time">2 Days Ago</span>
+									</span>
+								</a>
+							</div>
+							<div class="dropdown-footer text-center">
+								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
+							class="nav-link notification-toggle nav-link-lg"><i data-feather="bell"></i>
+							<span class="badge headerBadge2">
+								3 </span> </a>
+						<div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+							<div class="dropdown-header">
+								Notifications
+								<div class="float-right">
+									<a href="#">Mark All As Read</a>
+								</div>
+							</div>
+							<div class="dropdown-list-content dropdown-list-icons">
+								<a href="#" class="dropdown-item dropdown-item-unread"> <span
+										class="dropdown-item-icon bg-primary text-white"> <i class="fas
+												fa-code"></i>
+									</span> <span class="dropdown-item-desc"> Template update is
+										available now! <span class="time">2 Min
+											Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span
+										class="dropdown-item-icon bg-info text-white"> <i class="far
+												fa-user"></i>
+									</span> <span class="dropdown-item-desc"> <b>You</b> and <b>Dedik
+											Sugiharto</b> are now friends <span class="time">10 Hours
+											Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span
+										class="dropdown-item-icon bg-success text-white"> <i class="fas
+												fa-check"></i>
+									</span> <span class="dropdown-item-desc"> <b>Kusnaedi</b> has
+										moved task <b>Fix bug header</b> to <b>Done</b> <span class="time">12
+											Hours
+											Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span
+										class="dropdown-item-icon bg-danger text-white"> <i
+											class="fas fa-exclamation-triangle"></i>
+									</span> <span class="dropdown-item-desc"> Low disk space. Let's
+										clean it! <span class="time">17 Hours Ago</span>
+									</span>
+								</a> <a href="#" class="dropdown-item"> <span
+										class="dropdown-item-icon bg-info text-white"> <i class="fas
+												fa-bell"></i>
+									</span> <span class="dropdown-item-desc"> Welcome to Aegis
+										template! <span class="time">Yesterday</span>
+									</span>
+								</a>
+							</div>
+							<div class="dropdown-footer text-center">
+								<a href="#">View All <i class="fas fa-chevron-right"></i></a>
+							</div>
+						</div>
+					</li>
+					<li class="dropdown"><a href="#" data-toggle="dropdown"
+							class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image"
+								src="assets/img/user.png" class="user-img-radious-style"> <span
+								class="d-sm-none d-lg-inline-block"></span></a>
+						<div class="dropdown-menu dropdown-menu-right pullDown">
+							<div class="dropdown-title">Hello Sarah Smith</div>
+							<a href="profile.html" class="dropdown-item has-icon"> <i class="far
+										fa-user"></i> Profile
+							</a> <a href="timeline.html" class="dropdown-item has-icon"> <i class="fas fa-bolt"></i>
+								Activities
+							</a> <a href="#" class="dropdown-item has-icon"> <i class="fas fa-cog"></i>
+								Settings
+							</a>
+							<div class="dropdown-divider"></div>
+							<a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
+									class="fas fa-sign-out-alt"></i> Logout
+							</a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="main-sidebar sidebar-style-2">
+				<aside id="sidebar-wrapper">
+					<div class="sidebar-brand">
+						<a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
+								class="logo-name">Aegis</span>
+						</a>
+					</div>
+					<div class="sidebar-user">
+						<div class="sidebar-user-picture">
+							<img alt="image" src="assets/img/userbig.png">
+						</div>
+						<div class="sidebar-user-details">
+							<div class="user-name">Sarah Smith</div>
+							<div class="user-role">Administrator</div>
+						</div>
+					</div>
+					<ul class="sidebar-menu">
+						<li class="menu-header">Main</li>
+						<li class="dropdown active"><a href="{{route ('administracion.index')}}" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>Dashboard</span>
+							</a>
+						</li>
+						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>Productos</span></a>
+							<ul class="dropdown-menu">
+								<li><a class="nav-link" href="{{route ('productos.create')}}">Agregar productos</a></li>
+								<li><a class="nav-link" href="{{route ('productos.index')}}">Lista de productos</a></li>
+							</ul>
+						</li>
+					</ul>
+				</aside>
+			</div>
+			<!-- Main Content -->
       
       @yield('content')
 
-      @include('administracion.footer')
-      
-    </div>
-  </div>
-</div>
+
+			<footer class="main-footer">
+				<div class="footer-left">
+					Copyright &copy; 2020
+					<div class="bullet"></div>
+					Design By <a href="#">CHIPHYSI</a>
+				</div>
+				<div class="footer-right"></div>
+			</footer>
+		</div>
+	</div>
+	<!-- General JS Scripts -->
+	<script src="{{asset ('assets/js/app.min.js')}}"></script>
+	<!-- JS Libraies -->
+	<script src="{{asset ('assets/bundles/chartjs/chart.min.js')}}"></script>
+	<script src="{{asset ('assets/bundles/apexcharts/apexcharts.min.js')}}"></script>
+	<script src="{{asset ('assets/bundles/jquery.sparkline.min.js')}}"></script>
+	<script src="{{asset ('assets/bundles/jqvmap/dist/jquery.vmap.min.js')}}"></script>
+	<script src="{{asset ('assets/bundles/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+	<script src="{{asset ('assets/bundles/jqvmap/dist/maps/jquery.vmap.indonesia.js')}}"></script>
+	<!-- Page Specific JS File -->
+	<script src="{{asset ('assets/js/page/index2.js')}}"></script>
+	<script src="{{asset ('assets/js/page/todo.js')}}"></script>
+	<!-- Template JS File -->
+	<script src="{{asset ('assets/js/scripts.js')}}"></script>
+	<!-- Custom JS File -->
+	<script src="{{asset ('assets/js/custom.js')}}"></script>
+</body>

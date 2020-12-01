@@ -30,9 +30,9 @@
               </tr>
               @foreach ($productos as $producto)
                 <tr>
-                  <td>{{$productos->id}}</td>
-                  <td>{{$productos->nombre}}</td>
-                  <td>{{$productos->id}}</td>
+                  <td>{{$producto->id}}</td>
+                  <td>{{$producto->nombre}}</td>
+                  <td>{{$producto->id}}</td>
                   <td>
                     <div class="badge badge-success">Active</div>
                   </td>

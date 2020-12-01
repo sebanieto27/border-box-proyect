@@ -47,13 +47,15 @@ class ProductoController extends Controller
     {
         $data = request()->validate(
             [   'nombre' => 'required',
+                'precio' => 'required',
+                'marca' => 'required',
                 'fotoPrincipal' => 'required',
                 'descripcion' => 'required',
-                'precio' => 'required',
             ], ['nombre.required' => __('El nombre del producto es obligatorio.'),
+                'precio.required' => __('El precio del producto es obligatorio.'),
+                'marca.required' => __('La marca del producto es obligatorio.'),
                 'fotoPrincipal.required' => __('La foto del producto es obligatoria.'),
                 'descripcion.required' => __('La descripcion del producto es obligatoria.'),
-                'precio.required' => __('El precio del producto es obligatorio.'),
                 ]
         );
 

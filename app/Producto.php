@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Producto extends Model
 {
@@ -11,8 +12,16 @@ class Producto extends Model
 
     protected $fillable = [
         'nombre',
+        'cantidad',
+        'estado',
         'fotoPrincipal',
-        'descripcion',
         'precio',
+        'descripcion',
+        'descuento',
+        'marca',
     ];
+
+    public function fotocaroucel () {
+        return $this->BelongsTo ('App\FotoCarousel', 'fotoCarousel_id');
+    }
 }

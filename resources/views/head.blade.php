@@ -38,7 +38,7 @@
       <div class="container"><a class="navbar-brand d-none d-sm-block mr-4 order-lg-1" href="{{url ('/')}}" style="min-width: 7rem;"><img width="175" src="img/logo-borderBox.svg" alt="Pickbazar"/></a><a class="navbar-brand d-sm-none mr-2 order-lg-1" href="index-2.html" style="min-width: 4.625rem;"><img width="74" src="img/logo-borderBox.svg" alt="Pickbazar"/></a>
         <!-- Toolbar-->
         <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button><a class="navbar-tool d-none d-lg-flex" href="#searchBox" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="searchBox"><span class="navbar-tool-tooltip">Search</span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button><a class="navbar-tool d-none d-lg-flex" href="#searchBox" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="searchBox"><span class="navbar-tool-tooltip">Buscar</span>
             <div class="navbar-tool-icon-box"><i class="navbar-tool-icon czi-search"></i></div></a>
         </div>
         <div class="collapse navbar-collapse mr-auto order-lg-2" id="navbarCollapse">
@@ -48,7 +48,7 @@
             <input class="form-control prepended-form-control" type="text" placeholder="Search marketplace">
           </div>
           <!-- Categories dropdown-->
-          <ul class="navbar-nav mega-nav pr-lg-2 mr-lg-2">
+          {{-- <ul class="navbar-nav mega-nav pr-lg-2 mr-lg-2">
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle pl-0" href="#" data-toggle="dropdown"><i class="czi-menu align-middle mt-n1 mr-2"></i>Categories</a>
               <ul class="dropdown-menu py-1">
                 <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="#" data-toggle="dropdown">Notebooks</a>
@@ -60,7 +60,7 @@
                 </li>
               </ul>
             </li>
-          </ul>
+          </ul> --}}
           <!-- Primary menu-->
           <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="{{url ('contacto')}}">Contacto</a></li>

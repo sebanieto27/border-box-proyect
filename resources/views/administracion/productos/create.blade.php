@@ -27,9 +27,23 @@
               </div>
             </div>
             <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="">Marca</label>
+                <input type="text" class="form-control" placeholder="Marca" name="marca" value="" autofocus="" required="">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="">Categoría</label>
+                <input type="number" class="form-control" placeholder="Categoría" name="" value="" autofocus="" required="">
+              </div>
+            </div>
+            <div class="form-row">
               <div class="form-group col-md-12">
-                <label for="">Foto</label>
+                <label for="">Foto principal</label>
                 <input type="file" class="form-control" name="fotoPrincipal">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="">Foto carousel</label>
+                <input type="file" class="form-control" name="fotoCarousel">
               </div>
               <div class="form-group col-md-12">
                 <label for="inputTaxId">Descripción</label>

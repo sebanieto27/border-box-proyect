@@ -19,8 +19,8 @@ class CreateProductosTable extends Migration
             $table->string('nombre', 50);
             $table->integer('cantidad')->nullable();
             $table->tinyInteger('estado')->default(0);
+            $table->string('marca', 50);
             $table->string('fotoPrincipal', 255);
-            $table->string('fotoCarousel', 255)->nullable();
             $table->decimal('precio', 10, 2);
             $table->text('descripcion')->nullable();
             $table->float('descuento', 6, 2)->nullable();

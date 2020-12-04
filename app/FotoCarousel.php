@@ -8,7 +8,6 @@ class FotoCarousel extends Model
 {
     protected $guard = 'foto_carousel';
 
-
     protected $fillable = [
         'fotoCarousel',
     ];

@@ -182,28 +182,39 @@
 			<div class="main-sidebar sidebar-style-2">
 				<aside id="sidebar-wrapper">
 					<div class="sidebar-brand">
-						<a href="index.html"> <img alt="image" src="assets/img/logo.png" class="header-logo" /> <span
-								class="logo-name">Aegis</span>
+						<a href="index.html"> <img alt="image" src="{{asset ('img/logo-borderBox.svg') }}" class="header-logo" /> 
+							{{-- <span class="logo-name">BorderBox</span> --}}
 						</a>
 					</div>
 					<div class="sidebar-user">
 						<div class="sidebar-user-picture">
-							<img alt="image" src="assets/img/userbig.png">
+							{{-- <img alt="image" src="assets/img/userbig.png"> --}}
 						</div>
 						<div class="sidebar-user-details">
-							<div class="user-name">Sarah Smith</div>
-							<div class="user-role">Administrator</div>
+							<div class="user-name">{{ $user->name ?? 'Seba' }}</div>
+							<div class="user-role">{{__('Administrator')}}</div>
 						</div>
 					</div>
 					<ul class="sidebar-menu">
-						<li class="menu-header">Main</li>
+						<li class="menu-header">{{__('Tablero de control')}}</li>
 						<li class="dropdown active"><a href="{{route ('administracion.index')}}" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>Dashboard</span>
 							</a>
 						</li>
-						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>Productos</span></a>
+						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>{{__('Configuración')}}</span></a>
 							<ul class="dropdown-menu">
-								<li><a class="nav-link" href="{{route ('productos.create')}}">Agregar productos</a></li>
-								<li><a class="nav-link" href="{{route ('productos.index')}}">Lista de productos</a></li>
+								<li><a class="nav-link" href="{{ route('contacto') }}">{{__('Datos contacto')}}</a></li>
+							</ul>
+						</li>
+						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>{{ __('Detalles de compra') }}</span></a>
+							<ul class="dropdown-menu">
+								<li><a class="nav-link" href="{{ route('detalleCompra.index') }}">{{ __('Lista de detalles') }}</a></li>
+								<li><a class="nav-link" href="{{ route('detalleCompra.create') }}">{{ __('Crear un detalle') }}</a></li>
+							</ul>
+                        </li>
+						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>{{__('Productos')}}</span></a>
+							<ul class="dropdown-menu">
+								<li><a class="nav-link" href="{{route ('productos.index')}}">{{__('Lista de productos')}}</a></li>
+								<li><a class="nav-link" href="{{route ('productos.create')}}">{{__('Agregar productos')}}</a></li>
 							</ul>
 						</li>
 					</ul>

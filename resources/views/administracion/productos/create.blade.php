@@ -33,7 +33,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="">Categoría</label>
-                <input type="number" class="form-control" placeholder="Categoría" name="" value="" autofocus="" required="">
+                <input type="number" class="form-control" placeholder="Categoría" name="" value="" autofocus="" >
               </div>
             </div>
             <div class="form-row">

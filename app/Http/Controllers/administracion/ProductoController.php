@@ -59,6 +59,18 @@ class ProductoController extends Controller
                 ]
         );
 
+        if ($request->hasFile('fotoPrincipal'))
+        {
+            $data['fotoPrincipal'] = $request->file('fotoPrincipal')->store('uploads', 'public');
+        };
+
+        // if ($request->hasFile('fotocaroucel_id'))
+        // {
+        //     foreach ($variable as $key => $value) {
+        //         # code...
+        //     }
+        // }
+
         $data = request()->all();
 
         Producto::create($data);

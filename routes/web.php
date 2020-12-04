@@ -30,4 +30,17 @@ Route::get('/contacto', function () {
     return view('contacto');
 });
 
+// |--------------------------------------------------------------------------
+// | RUTA DE PRODUCTOS
+// |--------------------------------------------------------------------------
+Route::get('/producto/{id}', 'IndexController@producto');
+
+// |--------------------------------------------------------------------------
+// | RUTA DE CONFIGURACION DE CONTACTO
+// |--------------------------------------------------------------------------
+Route::get('admnistracion/configuraciones/contacto', 'administracion\ConfiguracionesController@contacto')->name('contacto');
+Route::post('administracion/configuraciones/contacto', 'administracion\ConfiguracionesController@contacto')->name('contacto');
+
+Route::resource('detalleCompra', 'Administracion\DetalleComprasController');
+
 

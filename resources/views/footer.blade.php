@@ -1,13 +1,10 @@
-@extends('head')
-@section('footer')
-
 <!-- Footer-->
 <footer class="bg-dark pt-5">
     <div class="container pt-2 pb-3">
       <div class="row">
         <div class="col-md-6 text-center text-md-left mb-4">
-          <div class="text-nowrap mb-3"><a class="d-inline-block align-middle mt-n2 mr-2" href="#"><img class="d-block" width="117" src="img/footer-logo-light.png" alt="Pickbazar"/></a><span class="d-inline-block align-middle h5 font-weight-light text-white mb-0">Marketplace</span></div>
-          <p class="font-size-sm text-white opacity-70 pb-1">High quality items created by our global community.</p>
+          <div class="text-nowrap mb-3"><a class="d-inline-block align-middle mt-n2 mr-2" href="#"><img class="d-block" width="117" src="{{asset ('image/png')}}" alt="Pickbazar"/></a><span class="d-inline-block align-middle h5 font-weight-light text-white mb-0">borderBox</span></div>
+          <p class="font-size-sm text-white opacity-70 pb-1">Del mundo a tus manos</p>
           <h6 class="d-inline-block pr-3 mr-3 border-right border-light"><span class="text-primary">65,478 </span><span class="font-weight-normal text-white">Products</span></h6>
           <h6 class="d-inline-block pr-3 mr-3 border-right border-light"><span class="text-primary">2,521 </span><span class="font-weight-normal text-white">Members</span></h6>
           <h6 class="d-inline-block mr-3"><span class="text-primary">897 </span><span class="font-weight-normal text-white">Vendors</span></h6>
@@ -71,31 +68,30 @@
     <div class="pt-5 bg-darker">
       <div class="container">
         <div class="widget w-100 mb-4 pb-3 text-center mx-auto" style="max-width: 28rem;">
-          <h3 class="widget-title text-light pb-1">Subscribe to newsletter</h3>
+          <h3 class="widget-title text-light pb-1">Suscribete a nuestro newsletter</h3>
           <form class="validate" action="https://studio.us12.list-manage.com/subscribe/post-json?u=c7103e2c981361a6639545bd5&amp;amp;id=29ca296126&amp;c=?" method="get" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form">
             <div class="input-group input-group-overlay flex-nowrap">
               <div class="input-group-prepend-overlay"><span class="input-group-text text-muted font-size-base"><i class="czi-mail"></i></span></div>
               <input class="form-control prepended-form-control" type="email" name="EMAIL" id="mce-EMAIL" value="" placeholder="Your email" required>
               <div class="input-group-append">
-                <button class="btn btn-primary" type="submit" name="subscribe" id="mc-embedded-subscribe">Subscribe*</button>
+                <button class="btn btn-primary" type="submit" name="subscribe" id="mc-embedded-subscribe">{{__('Subscribete')}}</button>
               </div>
             </div>
             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
             <div style="position: absolute; left: -5000px;" aria-hidden="true">
               <input type="text" name="b_c7103e2c981361a6639545bd5_29ca296126" tabindex="-1">
-            </div><small class="form-text text-light opacity-50" id="mc-helper">*Receive early discount offers, updates and new products info.</small>
+            </div><small class="form-text text-light opacity-50" id="mc-helper">{{__('*Recibe todas nuestras ofertas en tu email.')}}</small>
             <div class="subscribe-status"></div>
           </form>
         </div>
         <hr class="hr-light pb-4 mb-3">
         <div class="d-md-flex justify-content-between">
-          <div class="pb-4 font-size-xs text-light opacity-50 text-center text-md-left">© All rights reserved. Made by <a class="text-light" href="https://templatehouse.net/" target="_blank">TemplateHouse</a></div>
+          <div class="pb-4 font-size-xs text-light opacity-50 text-center text-md-left">© Todos los derechos reservados. Realizado por <a class="text-light" href="https://clikando.es/" target="_blank">Clikando</a></div>
           <div class="widget widget-links widget-light pb-4">
             <ul class="widget-list d-flex flex-wrap justify-content-center justify-content-md-start">
-              <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Help Center</a></li>
-              <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Affiliates</a></li>
-              <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Support</a></li>
-              <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">Terms &amp; Conditions</a></li>
+              <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">{{__('Centro de ayuda')}}</a></li>
+              <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">{{__('Soporte')}}</a></li>
+              <li class="widget-list-item ml-4"><a class="widget-list-link font-size-ms" href="#">{{__('Terminos y condiciones')}}</a></li>
             </ul>
           </div>
         </div>
@@ -109,6 +105,5 @@
   </div>
   <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">   </i></a>
   <!-- JavaScript libraries, plugins and custom scripts-->
-  <script src="js/vendor.min.js"></script>
-  <script src="js/theme.min.js"></script>
-@endsection
+  <script src="{{ asset('js/vendor.min.js') }}"></script>
+  <script src="{{ asset('js/theme.min.js') }}"></script>

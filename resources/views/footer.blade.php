@@ -3,35 +3,40 @@
     <div class="container pt-2 pb-3">
       <div class="row">
         <div class="col-md-6 text-center text-md-left mb-4">
-          <div class="text-nowrap mb-3"><a class="d-inline-block align-middle mt-n2 mr-2" href="#"><img class="d-block" width="117" src="{{asset ('image/png')}}" alt="Pickbazar"/></a><span class="d-inline-block align-middle h5 font-weight-light text-white mb-0">borderBox</span></div>
-          <p class="font-size-sm text-white opacity-70 pb-1">Del mundo a tus manos</p>
-          <h6 class="d-inline-block pr-3 mr-3 border-right border-light"><span class="text-primary">65,478 </span><span class="font-weight-normal text-white">Products</span></h6>
-          <h6 class="d-inline-block pr-3 mr-3 border-right border-light"><span class="text-primary">2,521 </span><span class="font-weight-normal text-white">Members</span></h6>
-          <h6 class="d-inline-block mr-3"><span class="text-primary">897 </span><span class="font-weight-normal text-white">Vendors</span></h6>
-          <div class="widget mt-4 text-md-nowrap text-center text-md-left"><a class="social-btn sb-light sb-twitter mr-2 mb-2" href="#"><i class="czi-twitter"></i></a><a class="social-btn sb-light sb-facebook mr-2 mb-2" href="#"><i class="czi-facebook"></i></a><a class="social-btn sb-light sb-dribbble mr-2 mb-2" href="#"><i class="czi-dribbble"></i></a><a class="social-btn sb-light sb-behance mr-2 mb-2" href="#"><i class="czi-behance"></i></a><a class="social-btn sb-light sb-pinterest mr-2 mb-2" href="#"><i class="czi-pinterest"></i></a></div>
+          <div class="text-nowrap mb-3"><a class="d-inline-block align-middle mt-n2 mr-2" href="{{'/'}}"></a>
+            <span class="d-inline-block align-middle h5 font-weight-light text-white mb-0">borderBox</span>
+          </div>
+            <p class="font-size-sm text-white opacity-70 pb-1">Del mundo a tus manos</p>
+            <h6 class="d-inline-block pr-3 mr-3 border-right border-light">
+              <span class="text-primary">65,478 </span>
+              <span class="font-weight-normal text-white">Products</span></h6>
+            <h6 class="d-inline-block pr-3 mr-3 border-right border-light">
+              <span class="text-primary">2,521 </span>
+              <span class="font-weight-normal text-white">Members</span></h6>
+            <h6 class="d-inline-block mr-3">
+              <span class="text-primary">897 </span>
+              <span class="font-weight-normal text-white">Vendors</span></h6>
+          <div class="widget mt-4 text-md-nowrap text-center text-md-left">
+            <a class="social-btn sb-light sb-twitter mr-2 mb-2" href="#"><i class="czi-twitter"></i></a>
+            <a class="social-btn sb-light sb-facebook mr-2 mb-2" href="#"><i class="czi-facebook"></i></a>
+            <a class="social-btn sb-light sb-dribbble mr-2 mb-2" href="#"><i class="czi-dribbble"></i></a>
+          </div>
         </div>
         <!-- Mobile dropdown menu (visible on screens below md)-->
         <div class="col-12 d-md-none text-center mb-4 pb-2">
           <div class="btn-group dropdown d-block mx-auto mb-3">
-            <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">Categories</button>
+            <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">Categors</button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Photos</a></li>
-              <li><a class="dropdown-item" href="#">Graphics</a></li>
-              <li><a class="dropdown-item" href="#">UI Design</a></li>
-              <li><a class="dropdown-item" href="#">Web Themes</a></li>
-              <li><a class="dropdown-item" href="#">Fonts</a></li>
-              <li><a class="dropdown-item" href="#">Add-Ons</a></li>
+              <li><a class="dropdown-item" href="#">x</a></li>
             </ul>
           </div>
           <div class="btn-group dropdown d-block mx-auto">
-            <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">For members</button>
+            <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">Compra con tranquilidad</button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Licenses</a></li>
-              <li><a class="dropdown-item" href="#">Return policy</a></li>
-              <li><a class="dropdown-item" href="#">Payment methods</a></li>
-              <li><a class="dropdown-item" href="#">Become a vendor</a></li>
-              <li><a class="dropdown-item" href="#">Become an affiliate</a></li>
-              <li><a class="dropdown-item" href="#">Marketplace benefits</a></li>
+              <li><a class="dropdown-item" href="#">Envío Asegurado</a></li>
+              <li><a class="dropdown-item" href="#">Garantía de Entrega</a></li>
+              <li><a class="dropdown-item" href="#">Productos Originales</a></li>
+              <li><a class="dropdown-item" href="#">Compra fácil, rápido y seguro</a></li>
             </ul>
           </div>
         </div>

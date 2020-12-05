@@ -97,14 +97,9 @@
       <div class="row">
         <div class="col-lg-8">
           <p class="font-size-md">{{ $producto->detalle }}</p>
-          <h3 class="h5 pt-2">Main features</h3>
+          <h3 class="h5 pt-2">{{__('Detalles del producto')}}</h3>
           <ul class="font-size-md">
-            <li>Nemo enim ipsam voluptatem quia voluptas sit</li>
-            <li>Ut enim ad minima veniam, quis nostrum exercitationem</li>
-            <li>Duis aute irure dolor in reprehenderit in voluptate</li>
-            <li>At vero eos et accusamus et iusto odio dignissimos</li>
-            <li>Omnis voluptas assumenda est omnis dolor</li>
-            <li>Quis autem vel eum iure reprehenderit qui in ea voluptate</li>
+            <li>{{ $producto->detalle ?? '' }}</li>
           </ul>
         </div>
       </div>

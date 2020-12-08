@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Administracion;
 
+use App\FotoCarousel;
 use App\Http\Controllers\Controller;
 use App\Producto;
 use Illuminate\Http\Request;
@@ -53,12 +54,14 @@ class ProductoController extends Controller
             [   'nombre' => 'required',
                 'precio' => 'required',
                 'marca' => 'required',
-                'fotoPrincipal' => 'required',
+                'fotoPrincipal' => 'required|image',
+                'fotoCarousel.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
                 'descripcion' => 'required',
             ], ['nombre.required' => __('El nombre del producto es obligatorio.'),
                 'precio.required' => __('El precio del producto es obligatorio.'),
                 'marca.required' => __('La marca del producto es obligatorio.'),
                 'fotoPrincipal.required' => __('La foto del producto es obligatoria.'),
+                // 'fotoPrincipal.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
                 'descripcion.required' => __('La descripcion del producto es obligatoria.'),
                 ]
         );
@@ -66,20 +69,39 @@ class ProductoController extends Controller
         if ($request->hasFile('fotoPrincipal'))
         {
             $data['fotoPrincipal'] = $request->file('fotoPrincipal')->store('uploads', 'public');
+            
+        };
+        $producto = Producto::create($data);
+
+            
+        $urlImagenes = [];
+        
+        if ($request->hasFile('fotoCarousel'))
+        {
+            $imagenes = $request->file('fotoCarousel');
+            
+            foreach ($imagenes as $imagene) {
+
+                $nombre = time().'_'.$imagene->getClientOriginalName();
+                $ruta = public_path().'/img/productos';
+                $imagene->move($ruta, $nombre);
+                $urlImagenes[]['url'] = '/img/productos/'.$nombre;
+
+                FotoCarousel::create([
+                    'fotoCarousel' => $urlImagenes,
+                ]);
+            }
+            
         };
 
-        // if ($request->hasFile('fotocaroucel_id'))
-        // {
-        //     foreach ($variable as $key => $value) {
-        //         # code...
-        //     }
-        // }
+    
 
-        $data = request()->all();
+        
+        
+        
 
-        Producto::create($data);
-
-        return redirect('administracion')->with('Mensaje', 'Producto agregado con éxito');
+       
+        return redirect('productos')->with('Mensaje', 'Producto agregado con éxito');
     }
 
     /**
@@ -101,7 +123,9 @@ class ProductoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $producto = Producto::find($id);
+
+        return view('administracion.productos.edit', compact('producto'));
     }
 
     /**
@@ -113,7 +137,10 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $producto = request()->all();
+        Producto::where('id','=',$id)->first()->update($producto);
+
+        return redirect('productos')->with('Mensaje', 'Producto editado con éxito');
     }
 
     /**
@@ -124,6 +151,7 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Producto::destroy($id);
+        return redirect('productos')->with('Mensaje', 'Producto eliminado con éxito');
     }
 }

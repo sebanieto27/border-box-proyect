@@ -19,7 +19,8 @@ class IndexController extends Controller
     {
         $producto = Producto::find($id);
         $detalleCompras = DetalleCompra::all();
+        $productoRelacionados = Producto::inRandomOrder()->get();
 
-        return view('producto', compact('producto', 'detalleCompras'));
+        return view('producto', compact('producto', 'detalleCompras', 'productoRelacionados'));
     }
 }

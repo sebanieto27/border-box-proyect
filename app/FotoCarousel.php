@@ -10,5 +10,10 @@ class FotoCarousel extends Model
 
     protected $fillable = [
         'fotoCarousel',
+        'producto_id',
     ];
+
+    public function producto () {
+        return $this->BelongsTo (Producto::class, 'producto_id');
+    }
 }

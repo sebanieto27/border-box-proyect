@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-6 text-center text-md-left mb-4">
           <div class="text-nowrap mb-3"><a class="d-inline-block align-middle mt-n2 mr-2" href="{{'/'}}"></a>
-            <span class="d-inline-block align-middle h5 font-weight-light text-white mb-0">borderBox</span>
+            <span class="d-inline-block align-middle h5 font-weight-light text-white mb-0">BorderBox</span>
           </div>
             <p class="font-size-sm text-white opacity-70 pb-1">Del mundo a tus manos</p>
             <h6 class="d-inline-block pr-3 mr-3 border-right border-light">
@@ -25,7 +25,7 @@
         <!-- Mobile dropdown menu (visible on screens below md)-->
         <div class="col-12 d-md-none text-center mb-4 pb-2">
           <div class="btn-group dropdown d-block mx-auto mb-3">
-            <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">Categors</button>
+            <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">Categorías</button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">x</a></li>
             </ul>
@@ -33,7 +33,7 @@
           <div class="btn-group dropdown d-block mx-auto">
             <button class="btn btn-outline-light border-light dropdown-toggle" type="button" data-toggle="dropdown">Compra con tranquilidad</button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Envío Asegurado</a></li>
+              <li><i class="czi-check"></i> Envío Asegurado</li>
               <li><a class="dropdown-item" href="#">Garantía de Entrega</a></li>
               <li><a class="dropdown-item" href="#">Productos Originales</a></li>
               <li><a class="dropdown-item" href="#">Compra fácil, rápido y seguro</a></li>
@@ -43,27 +43,20 @@
         <!-- Desktop menu (visible on screens above md)-->
         <div class="col-md-3 d-none d-md-block text-center text-md-left mb-4">
           <div class="widget widget-links widget-light pb-2">
-            <h3 class="widget-title text-light">Categories</h3>
+            <h3 class="widget-title text-light">Categorías</h3>
             <ul class="widget-list">
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Photos</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Graphics</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">UI Design</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Web Themes</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Fonts</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Add-Ons</a></li>
+              <li class="widget-list-item"><a class="widget-list-link" href="#">Notebooks</a></li>
             </ul>
           </div>
         </div>
         <div class="col-md-3 d-none d-md-block text-center text-md-left mb-4">
           <div class="widget widget-links widget-light pb-2">
-            <h3 class="widget-title text-light">For members</h3>
+            <h3 class="widget-title text-light">Comprá con tranquilidad</h3>
             <ul class="widget-list">
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Licenses</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Return policy</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Payment methods</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Become a vendor</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Become an affiliate</a></li>
-              <li class="widget-list-item"><a class="widget-list-link" href="#">Marketplace benefits</a></li>
+              <li class="widget-list-item" style="color: rgba(255,255,255,0.65);"><i class="czi-check"></i> Envío Asegurado</li>
+              <li class="widget-list-item" style="color: rgba(255,255,255,0.65);"><i class="czi-check"></i> Garantía de Entrega</li>
+              <li class="widget-list-item" style="color: rgba(255,255,255,0.65);"><i class="czi-check"></i> Productos Originales</li>
+              <li class="widget-list-item" style="color: rgba(255,255,255,0.65);"><i class="czi-check"></i> Compra fácil, rápido y seguro</li>
             </ul>
           </div>
         </div>

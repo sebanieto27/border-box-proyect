@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddFotocarouselIdToProductos extends Migration
+class AddProductoIdToFotoCarousel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddFotocarouselIdToProductos extends Migration
      */
     public function up()
     {
-        Schema::table('productos', function (Blueprint $table) {
-            $table->unsignedBigInteger('fotocaroucel_id')->nullable();
-            $table->foreign('fotocaroucel_id')->references('id')->on('foto_carousel');
+        Schema::table('foto_carousel', function (Blueprint $table) {
+            $table->unsignedBigInteger('producto_id')->nullable();
+            $table->foreign('producto_id')->references('id')->on('productos');
         });
     }
 
@@ -26,7 +26,7 @@ class AddFotocarouselIdToProductos extends Migration
      */
     public function down()
     {
-        Schema::table('productos', function (Blueprint $table) {
+        Schema::table('foto_carousel', function (Blueprint $table) {
             //
         });
     }

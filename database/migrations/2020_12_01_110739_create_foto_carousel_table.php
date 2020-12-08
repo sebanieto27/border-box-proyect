@@ -15,7 +15,7 @@ class CreateFotoCarouselTable extends Migration
     {
         Schema::create('foto_carousel', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('fotoCarousel', 255)->nullable();
+            $table->string('fotoCarousel', 255);
             $table->timestamps();
         });
     }

@@ -22,6 +22,6 @@ class Producto extends Model
     ];
 
     public function fotocaroucel () {
-        return $this->BelongsTo ('App\FotoCarousel', 'fotoCarousel_id');
+        return $this->BelongsTo (FotoCarousel::class, 'fotoCarousel_id');
     }
 }

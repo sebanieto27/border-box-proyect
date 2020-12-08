@@ -88,18 +88,14 @@
 
 <section class="container mb-4 mb-lg-5">
   <!-- Nav tabs-->
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item"><a class="nav-link p-4 active" href="#details" data-toggle="tab" role="tab">Detalles del producto</a></li>
-  </ul>
   <div class="tab-content pt-2">
     <!-- Product details tab-->
     <div class="tab-pane fade show active" id="details" role="tabpanel">
       <div class="row">
         <div class="col-lg-8">
-          <p class="font-size-md">{{ $producto->detalle }}</p>
           <h3 class="h5 pt-2">{{__('Detalles del producto')}}</h3>
           <ul class="font-size-md">
-            <li>{{ $producto->detalle ?? '' }}</li>
+            <li>{{ $producto->descripcion ?? '' }}</li>
           </ul>
         </div>
       </div>
@@ -109,104 +105,35 @@
 
 <section class="container mb-5 pb-lg-3">
   <div class="d-flex flex-wrap justify-content-between align-items-center border-bottom pb-4 mb-4">
-    <h2 class="h3 mb-0 pt-2">Related mockups</h2>
-    <div class="pt-2"><a class="btn btn-outline-accent btn-sm" href="marketplace-category.html">More mockups<i class="czi-arrow-right ml-1 mr-n1"></i></a></div>
+    <h2 class="h3 mb-0 pt-2">Productos realiacionados</h2>
+    {{-- <div class="pt-2"><a class="btn btn-outline-accent btn-sm" href="marketplace-category.html">More mockups<i class="czi-arrow-right ml-1 mr-n1"></i></a></div> --}}
   </div>
   <!-- Carousel-->
   <div class="cz-carousel">
     <div class="cz-carousel-inner" data-carousel-options="{&quot;items&quot;: 2, &quot;gutter&quot;: 16, &quot;controls&quot;: false, &quot;nav&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1},&quot;500&quot;:{&quot;items&quot;:2 },&quot;768&quot;:{&quot;items&quot;:3}, &quot;992&quot;:{&quot;items&quot;:4}}}">
       <!-- Product-->
-      <div>
-        <div class="card product-card-alt">
-          <div class="product-thumb">
-            <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-            <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="#"><i class="czi-eye"></i></a>
-              <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-            </div><a class="product-thumb-overlay" href="#"></a><img src="img/marketplace/products/02.jpg" alt="Product">
-          </div>
-          <div class="card-body">
-            <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-              <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">Createx Std. </a>in <a class="product-meta font-weight-medium" href="#">Graphics</a></div>
-              <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i>
-              </div>
+      @foreach ($productoRelacionados as $productoRelacionado)
+        <div>
+          <div class="card product-card-alt">
+            <div class="product-thumb">
+              <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="{{url ('producto', ['id' => $producto->id] )}}"><i class="czi-eye"></i></a>
+              </div><a class="product-thumb-overlay" href="{{url ('producto', ['id' => $producto->id] )}}"></a><img src="img/marketplace/products/01.jpg" alt="Product">
             </div>
-            <h3 class="product-title font-size-sm mb-2"><a href="#">Floating Phone and Tablet Mockup</a></h3>
-            <div class="d-flex flex-wrap justify-content-between align-items-center">
-              <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>109<span class="font-size-xs ml-1">Sales</span></div>
-              <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$15.<small>00</small></div>
+            <div class="card-body">
+              <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
+                <div class="text-muted font-size-xs mr-1"><a class="product-meta font-weight-medium" href="*">Notebook - {{$producto->marca}}</a></div>
+                <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star"></i>
+                </div>
+              </div>
+              <h3 class="product-title font-size-sm mb-2"><a href="{{url ('producto', ['id' => $producto->id] )}}">{{$producto->nombre}}</a></h3>
+              <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <div class="font-size-sm mr-2"><i class="czi-delivery text-muted mr-1"></i><span class="font-size-xs ml-1">Envíos a todo el país</span></div>
+                <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">${{$producto->precio}},<small>00</small></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Product-->
-      <div>
-        <div class="card product-card-alt">
-          <div class="product-thumb">
-            <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-            <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="#"><i class="czi-eye"></i></a>
-              <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-            </div><a class="product-thumb-overlay" href="#"></a><img src="img/marketplace/products/03.jpg" alt="Product">
-          </div>
-          <div class="card-body">
-            <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-              <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">Createx Std. </a>in <a class="product-meta font-weight-medium" href="#">Graphics</a></div>
-              <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star"></i>
-              </div>
-            </div>
-            <h3 class="product-title font-size-sm mb-2"><a href="#">Project Devices Showcase (PSD)</a></h3>
-            <div class="d-flex flex-wrap justify-content-between align-items-center">
-              <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>95<span class="font-size-xs ml-1">Sales</span></div>
-              <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$18.<small>00</small></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Product-->
-      <div>
-        <div class="card product-card-alt">
-          <div class="product-thumb">
-            <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-            <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="#"><i class="czi-eye"></i></a>
-              <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-            </div><a class="product-thumb-overlay" href="#"></a><img src="img/marketplace/products/08.jpg" alt="Product">
-          </div>
-          <div class="card-body">
-            <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-              <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">pixels </a>in <a class="product-meta font-weight-medium" href="#">Graphics</a></div>
-              <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i>
-              </div>
-            </div>
-            <h3 class="product-title font-size-sm mb-2"><a href="#">Business Card Branding Mockup</a></h3>
-            <div class="d-flex flex-wrap justify-content-between align-items-center">
-              <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>316<span class="font-size-xs ml-1">Sales</span></div>
-              <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$17.<small>00</small></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Product-->
-      <div>
-        <div class="card product-card-alt">
-          <div class="product-thumb">
-            <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-            <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="#"><i class="czi-eye"></i></a>
-              <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-            </div><a class="product-thumb-overlay" href="#"></a><img src="img/marketplace/products/07.jpg" alt="Product">
-          </div>
-          <div class="card-body">
-            <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-              <div class="text-muted font-size-xs mr-1">by <a class="product-meta font-weight-medium" href="#">pixels </a>in <a class="product-meta font-weight-medium" href="#">Graphics</a></div>
-              <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star"></i>
-              </div>
-            </div>
-            <h3 class="product-title font-size-sm mb-2"><a href="#">Gravity Device Mockups (PSD)</a></h3>
-            <div class="d-flex flex-wrap justify-content-between align-items-center">
-              <div class="font-size-sm mr-2"><i class="czi-download text-muted mr-1"></i>234<span class="font-size-xs ml-1">Sales</span></div>
-              <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$16.<small>00</small></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@
   <div class="col-12">
     <div class="card">
       <div class="card-header">
-        <h4>Advanced Table</h4>
+        <h4>Lista de productos</h4>
         <div class="card-header-form">
           <form>
             <div class="input-group">
@@ -32,13 +32,17 @@
                 <tr>
                   <td>{{$producto->id}}</td>
                   <td>{{$producto->nombre}}</td>
-                  <td>{{$producto->id}}</td>
+                  <td>{{$producto->precio}}</td>
                   <td>
-                    <div class="badge badge-success">Active</div>
+                    <div class="badge badge-success">Activado</div>
                   </td>
                   <td>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                    <a href="#" class="btn btn-danger">Eliminar</a>
+                    <a href="{{url ('productos/' .$producto->id. '/edit' )}}" class="btn btn-icon btn-primary"><i class="far fa-edit"></i></a>
+                    <form class="btn btn-xs" action="{{url ('productos/' .$producto->id)}}" method="post">
+                      @csrf
+                      {{method_field('DELETE')}}
+                      <button type="submit" class="btn btn-icon btn-danger" onclick="return confirm('Desea eliminar?');" data-toggle="modal"><i class="fa fa-trash-o"></i></button>
+                    </form>
                   </td>
                 </tr> 
               @endforeach

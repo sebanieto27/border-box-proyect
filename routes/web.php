@@ -22,13 +22,15 @@ Route::get('/', 'IndexController@index');
 // |--------------------------------------------------------------------------
 Route::resource('administracion', 'administracion\DashboardController');
 Route::resource('productos', 'administracion\ProductoController');
+Route::get('fotoPrincipal/{id?}', 'administracion\ProductoController@fotoPrincipal')->name('fotoPrincipal');
+Route::get('imagenCarousel/{id?}', 'administracion\ProductoController@displayFotoCarousel')->name('displayFotoCarousel');
 
 // |--------------------------------------------------------------------------
 // | RUTA DE CONTACTO
 // |--------------------------------------------------------------------------
-Route::get('/contacto', function () {
-    return view('contacto');
-});
+Route::get('/contacto', 'ContactoController@index');
+Route::post('contacto', 'ContactoController@store');
+
 
 // |--------------------------------------------------------------------------
 // | RUTA DE PRODUCTOS

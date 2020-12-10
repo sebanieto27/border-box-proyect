@@ -13,7 +13,7 @@
         <form method="POST" action="{{ route ('productos.store')}}" enctype="multipart/form-data">
           @csrf             
           <div class="card-header">
-            <h4>Agregar nuevo producto</h4>
+            <h4>{{ __('Agregar nuevo producto') }}</h4>
           </div>
           <div class="card-body">
             <div class="form-row">
@@ -27,7 +27,7 @@
                 @enderror
               </div>
               <div class="form-group col-md-6">
-                <label for="">Precio regular</label>
+                <label for="">{{ __('Precio regular') }}</label>
                 <input type="number" class="form-control  @error('precio') is-invalid @enderror" placeholder="Precio" name="precio" value="" autofocus="" >
                 @error('precio')
                 <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="">Marca</label>
+                <label for="">{{ __('Marca') }}</label>
                 <input type="text" class="form-control  @error('marca') is-invalid @enderror" placeholder="Marca" name="marca" value="" autofocus="" >
                 @error('marca')
                   <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                 @enderror
               </div>
               <div class="form-group col-md-6">
-                <label for="">Categoría</label>
+                <label for="">{{ __('Categoría') }}</label>
                 <input type="number" class="form-control  @error('categoria') is-invalid @enderror" placeholder="Categoría" name="" value="" autofocus="" >
                 @error('categoria')
                   <span class="invalid-feedback" role="alert">
@@ -67,7 +67,7 @@
                 @enderror
               </div>
               <div class="form-group col-md-12">
-                <label for="fotoCarousel">Foto carousel</label>
+                <label for="fotoCarousel">{{ __('Foto carousel') }}</label>
                 <input type="file" class="form-control  @error('fotoCarousel') is-invalid @enderror" id="fotoCarousel[]" name="fotoCarousel[]" multiple accept="image/*">
                 @error('fotoCarousel')
                   <span class="invalid-feedback" role="alert">
@@ -75,14 +75,12 @@
                   </span>
                 @enderror
                 <br>
-                Cargar varias imagenes para el carousel.
+                {{ __('Podes cargar varias imagenes para el carousel.') }}
                 <br>
-                Solo se aceptan imagenes con estos formatos: jpeg, png, jpg, svg.
-                <br>
-                Tamaño máximo de foto admitido: 2Mb.
+                {{ __('Solo se aceptan imagenes con estos formatos: jpeg, png, jpg, svg.') }}
               </div>
               <div class="form-group col-md-12">
-                <label for="inputTaxId">Descripción</label>
+                <label for="inputTaxId">{{ __('Descripción') }}</label>
                 <textarea class="form-control  @error('descripcion') is-invalid @enderror" name="descripcion"></textarea>
                 @error('descripcion')
                   <span class="invalid-feedback" role="alert">
@@ -93,7 +91,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <button class="btn btn-primary" type="submit">Cargar producto</button>
+            <button class="btn btn-primary" type="submit">{{ __('Cargar producto') }}</button>
           </div>
         </form>
       </div>

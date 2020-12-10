@@ -19,6 +19,12 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
+          @if (Session::has('Mensaje'))
+            <div class="alert alert-success alert-dismissible show fade" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+              {{Session::get('Mensaje')}}
+            </div>
+          @endif
           <table class="table table-bordered table-md">
             <tbody>
               <tr>
@@ -37,11 +43,12 @@
                     <div class="badge badge-success">Activado</div>
                   </td>
                   <td>
+                    <a href="{{url ('productos/' .$producto->id )}}" class="btn btn-icon btn-primary"><i class="fas fa-eye"></i></a>
                     <a href="{{url ('productos/' .$producto->id. '/edit' )}}" class="btn btn-icon btn-primary"><i class="far fa-edit"></i></a>
                     <form class="btn btn-xs" action="{{url ('productos/' .$producto->id)}}" method="post">
                       @csrf
                       {{method_field('DELETE')}}
-                      <button type="submit" class="btn btn-icon btn-danger" onclick="return confirm('Desea eliminar?');" data-toggle="modal"><i class="fa fa-trash-o"></i></button>
+                      <button type="submit" class="btn btn-icon btn-danger" onclick="return confirm('Desea eliminar?');" data-toggle="modal"><i class="fas fa-trash-alt" style="color: #fff"></i></button>
                     </form>
                   </td>
                 </tr> 

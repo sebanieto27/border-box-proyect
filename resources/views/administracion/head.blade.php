@@ -172,9 +172,10 @@
 								Settings
 							</a>
 							<div class="dropdown-divider"></div>
-							<a href="auth-login.html" class="dropdown-item has-icon text-danger"> <i
-									class="fas fa-sign-out-alt"></i> Logout
-							</a>
+							<a href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                            document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>{{ __('Logout') }}</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden"> {{ csrf_field() }}
+                            </form>
 						</div>
 					</li>
 				</ul>
@@ -197,12 +198,13 @@
 					</div>
 					<ul class="sidebar-menu">
 						<li class="menu-header">{{__('Tablero de control')}}</li>
-						<li class="dropdown active"><a href="{{route ('administracion.index')}}" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>Dashboard</span>
+						<li class="dropdown">
+							<a href="{{route ('administracion.index')}}" ><i data-feather="monitor"></i><span>{{ __('Dashboard') }}</span>
 							</a>
 						</li>
 						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>{{__('Configuración')}}</span></a>
 							<ul class="dropdown-menu">
-								<li><a class="nav-link" href="{{ route('contacto') }}">{{__('Datos contacto')}}</a></li>
+								<li><a class="nav-link" href="{{ url ('admnistracion/configuraciones/contacto') }}">{{__('Datos contacto')}}</a></li>
 							</ul>
 						</li>
 						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>{{ __('Detalles de compra') }}</span></a>

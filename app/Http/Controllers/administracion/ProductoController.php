@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Administracion;
 
-use App\FotoCarousel;
-use App\Http\Controllers\Controller;
+use File;
+use Response;
 use App\Producto;
+use App\FotoCarousel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ProductoController extends Controller
 {
@@ -54,14 +56,14 @@ class ProductoController extends Controller
             [   'nombre' => 'required',
                 'precio' => 'required',
                 'marca' => 'required',
-                'fotoPrincipal' => 'required|image',
-                'fotoCarousel.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
+                'fotoPrincipal' => 'required|image|mimes:jpeg,png,jpg,svg',
+                'fotoCarousel.*' => 'image|mimes:jpeg,png,jpg,svg',
                 'descripcion' => 'required',
             ], ['nombre.required' => __('El nombre del producto es obligatorio.'),
                 'precio.required' => __('El precio del producto es obligatorio.'),
                 'marca.required' => __('La marca del producto es obligatorio.'),
-                'fotoPrincipal.required' => __('La foto del producto es obligatoria.'),
-                // 'fotoPrincipal.*' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
+                'fotoPrincipal.required' => __('La foto del producto es obligatoria y debe ser en estos formartos: jpeg, png, jpg o svg.'),
+                'fotoPrincipal.*' => __('Las fotos del crarousel debe ser en estos formartos: jpeg, png, jpg o svg.'),
                 'descripcion.required' => __('La descripcion del producto es obligatoria.'),
                 ]
         );
@@ -80,28 +82,72 @@ class ProductoController extends Controller
         {
             $imagenes = $request->file('fotoCarousel');
             
-            foreach ($imagenes as $imagene) {
+            foreach ($imagenes as $key => $imagene) {
 
                 $nombre = time().'_'.$imagene->getClientOriginalName();
-                $ruta = public_path().'/img/productos';
+                $ruta = public_path('/img/productos');
                 $imagene->move($ruta, $nombre);
-                $urlImagenes[]['url'] = '/img/productos/'.$nombre;
+                $urlImagenes[$key]['url'] = '/img/productos/'.$nombre;
 
                 FotoCarousel::create([
-                    'fotoCarousel' => $urlImagenes,
+                    'nombreFoto' => $nombre,
+                    'fotoCarousel' => $urlImagenes[$key]['url'],
+                    'producto_id' => $producto->id,
                 ]);
             }
             
         };
 
-    
-
-        
-        
-        
-
        
         return redirect('productos')->with('Mensaje', 'Producto agregado con éxito');
+    }
+
+    public function fotoPrincipal($id = NULL)
+    {
+        $producto = Producto::find($id);
+
+        $path = storage_path('/app/public/'.$producto->fotoPrincipal);
+
+        if (!File::exists($path) || $producto->fotoPrincipal == NULL || empty($producto->fotoPrincipal)) {
+
+            $path = public_path()."/img/marketplace/products/01.jpg";
+            $file = File::get($path);
+            $type = File::mimeType($path);
+
+        }
+        else
+        {
+            $file = File::get($path);
+            $type = File::mimeType($path);
+        }
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+        return $response;
+    }
+
+    public function displayFotoCarousel($id = NULL)
+    {
+        $fotoCarousel = FotoCarousel::find($id);
+
+        $path = public_path($fotoCarousel->fotoCarousel);
+
+        if (!File::exists($path) || $fotoCarousel->fotoCarousel == NULL || empty($fotoCarousel->fotoCarousel)) {
+
+            $path = public_path()."/img/marketplace/products/01.jpg";
+            $file = File::get($path);
+            $type = File::mimeType($path);
+
+        }
+        else
+        {
+            $file = File::get($path);
+            $type = File::mimeType($path);
+        }
+
+        $response = Response::make($file, 200);
+        $response->header("Content-Type", $type);
+        return $response;
     }
 
     /**
@@ -112,7 +158,10 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+        $producto = Producto::find($id);
+        $fotoCarousel = FotoCarousel::where('producto_id', '=', $id)->get();
+
+        return view('administracion.productos.show', compact('producto', 'fotoCarousel'));
     }
 
     /**
@@ -124,8 +173,9 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto = Producto::find($id);
+        $fotoCarousel = FotoCarousel::where('producto_id', '=', $id)->get();
 
-        return view('administracion.productos.edit', compact('producto'));
+        return view('administracion.productos.edit', compact('producto', 'fotoCarousel'));
     }
 
     /**
@@ -138,7 +188,56 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         $producto = request()->all();
-        Producto::where('id','=',$id)->first()->update($producto);
+
+        $data = request()->validate(
+            [   'nombre' => 'required',
+                'precio' => 'required',
+                'marca' => 'required',
+                'fotoPrincipal.*' => 'image|mimes:jpeg,png,jpg,svg',
+                'fotoCarousel.*' => 'image|mimes:jpeg,png,jpg,svg',
+                'descripcion' => 'required',
+            ], ['nombre.required' => __('El nombre del producto es obligatorio.'),
+                'precio.required' => __('El precio del producto es obligatorio.'),
+                'marca.required' => __('La marca del producto es obligatorio.'),
+                'fotoPrincipal.required' => __('La foto del producto es obligatoria.'),
+                'fotoPrincipal.*' => 'image|mimes:jpeg,png,jpg,svg',
+                'descripcion.required' => __('La descripcion del producto es obligatoria.'),
+                ]
+        );
+
+        if ($request->hasFile('fotoPrincipal'))
+        {
+            $data['fotoPrincipal'] = $request->file('fotoPrincipal')->store('uploads', 'public');
+            
+        };
+
+        $producto = Producto::where('id','=',$id)->first()->update($data);
+
+            
+        $urlImagenes = [];
+        
+        if ($request->hasFile('fotoCarousel'))
+        {
+            $imagenes = $request->file('fotoCarousel');
+            
+            foreach ($imagenes as $key => $imagene) {
+
+                $nombre = time().'_'.$imagene->getClientOriginalName();
+                $ruta = public_path('/img/productos');
+                $imagene->move($ruta, $nombre);
+                $urlImagenes[$key]['url'] = '/img/productos/'.$nombre;
+
+                FotoCarousel::create([
+                    'nombreFoto' => $nombre,
+                    'fotoCarousel' => $urlImagenes[$key]['url'],
+                    'producto_id' => $producto->id,
+                ]);
+            }
+            
+        };
+
+
+
 
         return redirect('productos')->with('Mensaje', 'Producto editado con éxito');
     }
@@ -151,6 +250,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
+        
+        FotoCarousel::where('producto_id', '=', $id)->delete();
         Producto::destroy($id);
         return redirect('productos')->with('Mensaje', 'Producto eliminado con éxito');
     }

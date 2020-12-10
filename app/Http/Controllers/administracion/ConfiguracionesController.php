@@ -22,7 +22,7 @@ class ConfiguracionesController extends Controller
         $configuraciones = Configuracione::find(1);
 
 
-        if(Request()->isMethod('post'))
+        if (Request()->isMethod('post'))
         {
             $data = request()->validate([
 

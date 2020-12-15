@@ -185,21 +185,24 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-name">{{ __('Tu nombre y apellido:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control" type="text" id="cf-name" placeholder="Nombre y apellido" name="nombre" required="">
+                      <input class="form-control" type="text" id="cf-name" placeholder="Nombre y apellido" name="nombre" >
+                      <div class="invalid-feedback">
+                        {{ $errors->first('name')}}
+                      </div> 
                       <div class="invalid-feedback">{{ __('Por favor ingresa un nombre!' )}}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-email">{{ __('Dirección de Email:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control" type="email" id="cf-email" name="email" placeholder="ejemplo@email.com" required="">
+                      <input class="form-control" type="email" id="cf-email" name="email" placeholder="ejemplo@email.com" >
                       <div class="invalid-feedback">{{ __('Por favor ingresa un email válido!') }}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-phone">{{ __('Teléfono:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control" type="number" id="cf-phone" name="telefono" placeholder="(3541) 00 000 000" required="">
+                      <input class="form-control" type="number" id="cf-phone" name="telefono" placeholder="(3541) 00 000 000" >
                       <div class="invalid-feedback">{{ __('Por favor ingresa un número válido!') }}</div>
                     </div>
                   </div>
@@ -212,7 +215,7 @@
                 </div>
                 <div class="form-group">
                   <label for="cf-message">{{ __('Mensaje:') }}&nbsp;<span class="text-danger">*</span></label>
-                  <textarea class="form-control" id="cf-message" rows="6" name="mensaje" placeholder="Por favor describe tu consulta" required=""></textarea>
+                  <textarea class="form-control" id="cf-message" rows="6" name="mensaje" placeholder="Por favor describe tu consulta" ></textarea>
                   <div class="invalid-feedback">{{ __('Por favor ingresa mensaje!') }}</div>
                 </div>
                 <button class="btn btn-primary" type="submit">{{ __('Enviar mensaje') }}</button>

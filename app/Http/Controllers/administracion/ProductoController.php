@@ -211,15 +211,16 @@ class ProductoController extends Controller
             
         };
 
-        $producto = Producto::where('id','=',$id)->first()->update($data);
-
+        Producto::where('id','=',$id)->first()->update($data);
+        FotoCarousel::where('producto_id', '=', $id)->delete();
             
         $urlImagenes = [];
         
         if ($request->hasFile('fotoCarousel'))
         {
+
             $imagenes = $request->file('fotoCarousel');
-            
+
             foreach ($imagenes as $key => $imagene) {
 
                 $nombre = time().'_'.$imagene->getClientOriginalName();
@@ -230,7 +231,7 @@ class ProductoController extends Controller
                 FotoCarousel::create([
                     'nombreFoto' => $nombre,
                     'fotoCarousel' => $urlImagenes[$key]['url'],
-                    'producto_id' => $producto->id,
+                    'producto_id' => $id,
                 ]);
             }
             

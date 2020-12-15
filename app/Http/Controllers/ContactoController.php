@@ -35,7 +35,16 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+            request()->validate([
+            'nombre' => 'required',
+            'email' => 'required',
+            'telefono' => 'required',
+            'asunto' => 'required',
+            'mensaje' => 'required',
+        ]);
+    
+
+        return  'Datos validados';
     }
 
     /**

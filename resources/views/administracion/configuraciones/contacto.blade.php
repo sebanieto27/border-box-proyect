@@ -21,7 +21,7 @@
                       
                     </div>
                   </div>
-                <form method="POST" action="{{ url()->current() }}">
+                <form method="POST" action="{{ route ('configContacto') }}">
                     @csrf
                     <input type="hidden" name="config_id" value="{{ $configuraciones->id }}">           
                     <div class="form-row">

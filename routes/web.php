@@ -28,8 +28,9 @@ Route::get('imagenCarousel/{id?}', 'administracion\ProductoController@displayFot
 // |--------------------------------------------------------------------------
 // | RUTA DE CONTACTO
 // |--------------------------------------------------------------------------
+// Route::resource('contacto', 'ContactoController');
 Route::get('/contacto', 'ContactoController@index');
-Route::post('contacto', 'ContactoController@store');
+Route::post('contacto', 'ContactoController@store')->name('contacto');
 
 
 // |--------------------------------------------------------------------------
@@ -40,8 +41,8 @@ Route::get('/producto/{id}', 'IndexController@producto');
 // |--------------------------------------------------------------------------
 // | RUTA DE CONFIGURACION DE CONTACTO
 // |--------------------------------------------------------------------------
-Route::get('admnistracion/configuraciones/contacto', 'administracion\ConfiguracionesController@contacto')->name('contacto');
-Route::post('administracion/configuraciones/contacto', 'administracion\ConfiguracionesController@contacto')->name('contacto');
+Route::get('admnistracion/configuraciones/contacto', 'administracion\ConfiguracionesController@contacto');
+Route::post('administracion/configuraciones/contacto', 'administracion\ConfiguracionesController@contacto')->name('configContacto');
 
 Route::resource('detalleCompra', 'Administracion\DetalleComprasController');
 

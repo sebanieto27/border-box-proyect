@@ -115,6 +115,6 @@ class CategoriasController extends Controller
     public function destroy($id)
     {
         Categoria::destroy($id);
-        return redirect('categoria')->with('Mensaje', 'Categoría eliminada con éxito');
+        return redirect('categorias')->with('Mensaje', 'Categoría eliminada con éxito');
     }
 }

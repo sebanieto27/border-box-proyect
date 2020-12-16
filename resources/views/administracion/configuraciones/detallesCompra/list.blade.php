@@ -57,7 +57,7 @@
                           <form  class="btn btn-xs" action="{{url ('preguntas/' .$detalleCompra->id)}}" method="post">
                             @csrf
                             {{method_field('DELETE')}}
-                              <button type="submit" class="btn btn-icon btn-danger" onclick="return confirm('Desea eliminar?');" data-toggle="modal"><i class="fa fa-trash-o"></i></button>
+                              <button type="submit" class="btn btn-icon btn-danger" onclick="return confirm('Desea eliminar?');" data-toggle="modal"><i class="fas fa-trash-alt" style="color: #fff"></i></button>
                           </form>                       
                         </td>
                       </tr>

@@ -19,7 +19,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="">{{ __('Nombre') }}</label>
-                <input type="text" class="form-control @error('nombre') is-invalid @enderror" placeholder="Nombre" name="nombre" value="{{ old('nombre') }}" autocomplete="nombre" autofocus required>
+                <input type="text" class="form-control @error('nombre') is-invalid @enderror" placeholder="Nombre" name="nombre" value="{{ old('nombre') }}" autocomplete="nombre" autofocus>
                 @error('nombre')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -48,7 +48,12 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="">{{ __('Categoría') }}</label>
-                <input type="number" class="form-control  @error('categoria') is-invalid @enderror" placeholder="Categoría" name="" value="{{ old('categoria') }}" autofocus="" >
+                <select type="text" class="form-control @error('categoria') is-invalid @enderror" placeholder="Categoría" name="categoria_id" autofocus="">
+                  @foreach ($categorias as $categoria)
+                    <option>{{ __('Seleeciona una categoría') }}</option>
+                    <option value="{{$categoria->id}}">{{$categoria->nombre}}</option> 
+                  @endforeach
+                </select>
                 @error('categoria')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -58,8 +63,8 @@
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
-                <label for="">Foto principal</label>
-                <input type="file" class="form-control  @error('fotoPrincipal') is-invalid @enderror" name="fotoPrincipal">
+                <label for="">{{ __('Foto principal') }}</label>
+                <input type="file" class="form-control  @error('fotoPrincipal') is-invalid @enderror" name="fotoPrincipal" value="{{ old('fotoPrincipal') }}" accept="image/*">
                 @error('fotoPrincipal')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -68,7 +73,7 @@
               </div>
               <div class="form-group col-md-12">
                 <label for="fotoCarousel">{{ __('Foto carousel') }}</label>
-                <input type="file" class="form-control  @error('fotoCarousel') is-invalid @enderror" id="fotoCarousel[]" name="fotoCarousel[]" multiple accept="image/*">
+                <input type="file" class="form-control  @error('fotoCarousel') is-invalid @enderror" id="fotoCarousel[]" name="fotoCarousel[]" multiple accept="image/*" value="{{ old('fotoPrincipal') }}">
                 @error('fotoCarousel')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -80,8 +85,8 @@
                 {{ __('Solo se aceptan imagenes con estos formatos: jpeg, png, jpg, svg.') }}
               </div>
               <div class="form-group col-md-12">
-                <label for="inputTaxId">{{ __('Descripción') }}</label>
-                <textarea class="form-control  @error('descripcion') is-invalid @enderror" value="{{ old('descripcion') }}" name="descripcion"></textarea>
+                <label for="descripcion">{{ __('Descripción') }}</label>
+                <textarea class="form-control  @error('descripcion') is-invalid @enderror" name="descripcion">{{ old('descripcion') }}</textarea>
                 @error('descripcion')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>

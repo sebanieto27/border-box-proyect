@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Administracion;
 
+use App\Categoria;
 use File;
 use Response;
 use App\Producto;
@@ -40,8 +41,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
+        $categorias = Categoria::all();
         $productos = Producto::all();
-        return view('administracion.productos.create', compact('productos'));
+        return view('administracion.productos.create', compact('productos', 'categorias'));
     }
 
     /**
@@ -56,12 +58,14 @@ class ProductoController extends Controller
             [   'nombre' => 'required',
                 'precio' => 'required',
                 'marca' => 'required',
+                'categoria_id' => 'required',
                 'fotoPrincipal' => 'required|image|mimes:jpeg,png,jpg,svg',
                 'fotoCarousel.*' => 'image|mimes:jpeg,png,jpg,svg',
                 'descripcion' => 'required',
             ], ['nombre.required' => __('El nombre del producto es obligatorio.'),
                 'precio.required' => __('El precio del producto es obligatorio.'),
                 'marca.required' => __('La marca del producto es obligatorio.'),
+                'categoria_id.required' => __('Agregar una categoría para producto.'),
                 'fotoPrincipal.required' => __('La foto del producto es obligatoria y debe ser en estos formartos: jpeg, png, jpg o svg.'),
                 'fotoPrincipal.*' => __('Las fotos del crarousel debe ser en estos formartos: jpeg, png, jpg o svg.'),
                 'descripcion.required' => __('La descripcion del producto es obligatoria.'),
@@ -99,7 +103,7 @@ class ProductoController extends Controller
         };
 
        
-        return redirect('producto')->with('Mensaje', 'Producto agregado con éxito');
+        return redirect('productos')->with('Mensaje', 'Producto agregado con éxito');
     }
 
     public function fotoPrincipal($id = NULL)

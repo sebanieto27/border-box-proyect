@@ -29,18 +29,20 @@
             <tbody>
               <tr>
                 <th>#</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Estado</th>
-                <th>Acciones</th>
+                <th>{{ __('Nombre') }}</th>
+                <th>{{ __('Precio') }}</th>
+                <th>{{ __('Categoría') }}</th>
+                <th>{{ __('Estado') }}</th>
+                <th>{{ __('Acciones') }}</th>
               </tr>
               @foreach ($productos as $producto)
                 <tr>
                   <td>{{$producto->id}}</td>
                   <td>{{$producto->nombre}}</td>
                   <td>{{$producto->precio}}</td>
+                  <td>{{$producto->categoria->nombre}}</td>
                   <td>
-                    <div class="badge badge-success">Activado</div>
+                    <div class="badge badge-success">{{ __('Activado') }}</div>
                   </td>
                   <td>
                     <a href="{{url ('productos/' .$producto->id )}}" class="btn btn-icon btn-primary"><i class="fas fa-eye"></i></a>

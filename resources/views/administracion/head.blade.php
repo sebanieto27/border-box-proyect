@@ -212,7 +212,13 @@
 								<li><a class="nav-link" href="{{ route('detalleCompra.index') }}">{{ __('Lista de detalles') }}</a></li>
 								<li><a class="nav-link" href="{{ route('detalleCompra.create') }}">{{ __('Crear un detalle') }}</a></li>
 							</ul>
-                        </li>
+						</li>
+						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>{{__('Categorías')}}</span></a>
+							<ul class="dropdown-menu">
+								<li><a class="nav-link" href="{{route ('categorias.index')}}">{{__('Lista de productos')}}</a></li>
+								<li><a class="nav-link" href="{{route ('categorias.create')}}">{{__('Agregar productos')}}</a></li>
+							</ul>
+						</li>
 						<li class="dropdown"><a href="#" class="nav-link has-dropdown"><i data-feather="monitor"></i><span>{{__('Productos')}}</span></a>
 							<ul class="dropdown-menu">
 								<li><a class="nav-link" href="{{route ('productos.index')}}">{{__('Lista de productos')}}</a></li>

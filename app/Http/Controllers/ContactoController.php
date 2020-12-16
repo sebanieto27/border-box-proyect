@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Contacto;
+use App\Mail\MensajeContacto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactoController extends Controller
 {
@@ -35,16 +37,25 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-            request()->validate([
+        $data = request()->validate([
             'nombre' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'telefono' => 'required',
             'asunto' => 'required',
             'mensaje' => 'required',
-        ]);
+        ], ['nombre.required' => __('El nombre del producto es obligatorio.'),
+            'email.required' => __('El email del producto es obligatorio.'),
+            'telefono.required' => __('El télefono del producto es obligatorio.'),
+            'asunto.required' => __('El asunto del producto es obligatorio.'),
+            'mensaje.required' => __('El mensaje del producto es obligatorio.'),
+            ]
+        );
     
+        Mail::to('sebanieto27@gmail.com')->send(new MensajeContacto);
+        Contacto::create($data);
 
-        return  'Datos validados';
+        return redirect('/')->with('Mensaje', 'Mensaje enviado con éxito');
+        
     }
 
     /**

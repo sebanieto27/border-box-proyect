@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\DetalleCompra;
+use App\Contacto;
 use App\Producto;
+use App\DetalleCompra;
 use Illuminate\Http\Request;
+use App\Mail\MensajeContacto;
+use Illuminate\Support\Facades\Mail;
 
 class IndexController extends Controller
 {
@@ -23,4 +26,5 @@ class IndexController extends Controller
 
         return view('producto', compact('producto', 'detalleCompras', 'productoRelacionados'));
     }
+
 }

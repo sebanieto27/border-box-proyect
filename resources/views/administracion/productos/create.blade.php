@@ -19,7 +19,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="">{{ __('Nombre') }}</label>
-                <input type="text" class="form-control @error('nombre') is-invalid @enderror" placeholder="Nombre" name="nombre" value="" autocomplete="nombre" autofocus>
+                <input type="text" class="form-control @error('nombre') is-invalid @enderror" placeholder="Nombre" name="nombre" value="{{ old('nombre') }}" autocomplete="nombre" autofocus required>
                 @error('nombre')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -28,18 +28,18 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="">{{ __('Precio regular') }}</label>
-                <input type="number" class="form-control  @error('precio') is-invalid @enderror" placeholder="Precio" name="precio" value="" autofocus="" >
+                <input type="number" class="form-control  @error('precio') is-invalid @enderror" placeholder="Precio" name="precio" value="{{ old('precio') }}" autofocus="" >
                 @error('precio')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-              @enderror
+                  <span class="invalid-feedback" role="alert">
+                      <strong>{{ $message }}</strong>
+                  </span>
+                @enderror
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="">{{ __('Marca') }}</label>
-                <input type="text" class="form-control  @error('marca') is-invalid @enderror" placeholder="Marca" name="marca" value="" autofocus="" >
+                <input type="text" class="form-control  @error('marca') is-invalid @enderror" placeholder="Marca" name="marca" value="{{ old('marca') }}" autofocus="" >
                 @error('marca')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -48,7 +48,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="">{{ __('Categoría') }}</label>
-                <input type="number" class="form-control  @error('categoria') is-invalid @enderror" placeholder="Categoría" name="" value="" autofocus="" >
+                <input type="number" class="form-control  @error('categoria') is-invalid @enderror" placeholder="Categoría" name="" value="{{ old('categoria') }}" autofocus="" >
                 @error('categoria')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>
@@ -81,7 +81,7 @@
               </div>
               <div class="form-group col-md-12">
                 <label for="inputTaxId">{{ __('Descripción') }}</label>
-                <textarea class="form-control  @error('descripcion') is-invalid @enderror" name="descripcion"></textarea>
+                <textarea class="form-control  @error('descripcion') is-invalid @enderror" value="{{ old('descripcion') }}" name="descripcion"></textarea>
                 @error('descripcion')
                   <span class="invalid-feedback" role="alert">
                       <strong>{{ $message }}</strong>

@@ -179,47 +179,50 @@
             </div>
             <div class="col-lg-6 px-4 px-xl-5 py-5 border-top">
               <h2 class="h4 mb-4">{{ __('Ingresa tus datos') }}</h2>
-              <form class="needs-validation mb-3" method="POST" action="{{ route('contacto') }}" novalidate="">
+              <form class="needs-validation mb-3" method="POST" action="{{ route('contact') }}" novalidate="">
                 @csrf 
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-name">{{ __('Tu nombre y apellido:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control" type="text" id="cf-name" placeholder="Nombre y apellido" name="nombre" >
-                      <div class="invalid-feedback">
-                        {{ $errors->first('name')}}
-                      </div> 
-                      <div class="invalid-feedback">{{ __('Por favor ingresa un nombre!' )}}</div>
+                      <input class="form-control @error('nombre') is-invalid @enderror" type="text" id="cf-name" placeholder="Nombre y apellido" name="nombre" autofocus value="{{ old('nombre') }}">
+                      <div class="invalid-feedback">{{ $errors->first('nombre')}}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-email">{{ __('Dirección de Email:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control" type="email" id="cf-email" name="email" placeholder="ejemplo@email.com" >
-                      <div class="invalid-feedback">{{ __('Por favor ingresa un email válido!') }}</div>
+                      <input class="form-control  @error('email') is-invalid @enderror" type="email" id="cf-email" name="email" placeholder="ejemplo@email.com" autofocus value="{{ old('email') }}">
+                      <div class="invalid-feedback">{{ $errors->first('email')}}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-phone">{{ __('Teléfono:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control" type="number" id="cf-phone" name="telefono" placeholder="(3541) 00 000 000" >
-                      <div class="invalid-feedback">{{ __('Por favor ingresa un número válido!') }}</div>
+                      <input class="form-control  @error('telefono') is-invalid @enderror" type="number" id="cf-phone" name="telefono" placeholder="(3541) 00 000 000" autofocus value="{{ old('telefono') }}">
+                      <div class="invalid-feedback">{{ $errors->first('telefono')}}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-subject">{{ __('Asunto:') }}</label>
-                      <input class="form-control" type="text" id="cf-subject" name="asunto" placeholder="Proporcione un título breve de su solicitud">
+                      <input class="form-control  @error('asunto') is-invalid @enderror" type="text" id="cf-subject" name="asunto" placeholder="Proporcione un título breve de su solicitud" autofocus value="{{ old('asunto') }}">
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="cf-message">{{ __('Mensaje:') }}&nbsp;<span class="text-danger">*</span></label>
-                  <textarea class="form-control" id="cf-message" rows="6" name="mensaje" placeholder="Por favor describe tu consulta" ></textarea>
+                  <textarea class="form-control  @error('mensaje') is-invalid @enderror" id="cf-message" rows="6" name="mensaje" placeholder="Por favor describe tu consulta" autofocus >{{ old('nombre') }}</textarea>
                   <div class="invalid-feedback">{{ __('Por favor ingresa mensaje!') }}</div>
                 </div>
                 <button class="btn btn-primary" type="submit">{{ __('Enviar mensaje') }}</button>
               </form>
+                @if (Session::has('Mensaje'))
+                  <div class="alert alert-success alert-dismissible show fade" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    {{Session::get('Mensaje')}}
+                  </div>
+                @endif
             </div>
           </div>
         </div>

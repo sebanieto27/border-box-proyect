@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateContactosTable extends Migration
+class CreateSubCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateContactosTable extends Migration
      */
     public function up()
     {
-        Schema::create('contactos', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('sub_categorias', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nombre', 50);
-            $table->string('email', 50);
-            $table->string('telefono', 200);
-            $table->string('asunto', 100);
-            $table->text('mensaje');
+            $table->text('nombre');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ class CreateContactosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contactos');
+        Schema::dropIfExists('sub_categorias');
     }
 }

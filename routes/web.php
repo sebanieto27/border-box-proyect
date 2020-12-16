@@ -15,12 +15,13 @@ Auth::routes();
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('index');
 
 // |--------------------------------------------------------------------------
 // | RUTAS DE ADMINISTRACION
 // |--------------------------------------------------------------------------
 Route::resource('administracion', 'administracion\DashboardController');
+Route::resource('categorias', 'administracion\CategoriasController');
 Route::resource('productos', 'administracion\ProductoController');
 Route::get('fotoPrincipal/{id?}', 'administracion\ProductoController@fotoPrincipal')->name('fotoPrincipal');
 Route::get('imagenCarousel/{id?}', 'administracion\ProductoController@displayFotoCarousel')->name('displayFotoCarousel');
@@ -30,8 +31,7 @@ Route::get('imagenCarousel/{id?}', 'administracion\ProductoController@displayFot
 // |--------------------------------------------------------------------------
 // Route::resource('contacto', 'ContactoController');
 Route::get('/contacto', 'ContactoController@index');
-Route::post('contacto', 'ContactoController@store')->name('contacto');
-
+Route::post('/', 'ContactoController@store')->name('contact');
 
 // |--------------------------------------------------------------------------
 // | RUTA DE PRODUCTOS

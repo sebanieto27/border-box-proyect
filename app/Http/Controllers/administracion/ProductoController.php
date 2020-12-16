@@ -99,7 +99,7 @@ class ProductoController extends Controller
         };
 
        
-        return redirect('productos')->with('Mensaje', 'Producto agregado con éxito');
+        return redirect('producto')->with('Mensaje', 'Producto agregado con éxito');
     }
 
     public function fotoPrincipal($id = NULL)

@@ -1,5 +1,4 @@
 @extends('head')
-
 @section('content')
 
 <body>
@@ -9,19 +8,22 @@
         <div class="container py-lg-5 my-lg-5">
           <div class="row mb-4 mb-sm-5">
             <div class="col-lg-7 col-md-9 text-center text-sm-left">
-              <h1 class="text-white line-height-base"><span class='font-weight-light'>Las mejores</span> notebooks <span class='font-weight-light'> del mercado y con los mejores precios.</span> Paga en pesos, <span class='font-weight-light'>&amp;</span> en cuotas <span class='font-weight-light'>6, 12 y 18.</span></h1>
-              <h2 class="h5 text-white font-weight-light">No lo dudes, consultanos por diferentes modelos.</h2>
+              <h1 class="text-white line-height-base"><span class='font-weight-light'>{{ __('Las mejores') }}</span> {{ __('notebooks') }} <span class='font-weight-light'> {{ __('del mercado y con los mejores precios.') }}</span> {{ __('Paga en pesos,') }} <span class='font-weight-light'>&amp;</span> {{ __('en cuotas') }} <span class='font-weight-light'>{{ __('6, 12 y 18.') }}</span></h1>
+              <h2 class="h5 text-white font-weight-light">{{ __('No lo dudes, consultanos por diferentes modelos.') }}</h2>
             </div>
           </div>
           <div class="row pb-lg-5 mb-4 mb-sm-5">
             <div class="col-lg-6 col-md-8">
-              <div class="input-group input-group-overlay input-group-lg">
-                <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
-                <input class="form-control form-control-lg prepended-form-control rounded-right-0" type="text" placeholder="Busca tu próxima notebook">
-                <div class="input-group-append">
-                  <button class="btn btn-primary btn-lg font-size-base" type="button">{{ __('Buscar') }}</button>
+              <form action="{{ route('search') }}" method="GET" role="search">
+                {{ csrf_field() }}
+                <div class="input-group input-group-overlay input-group-lg">
+                  <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
+                  <input class="form-control form-control-lg prepended-form-control rounded-right-0" name="search" type="search" placeholder="Busca tu próxima notebook">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary btn-lg font-size-base" type="submit">{{ __('Buscar') }}</button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
@@ -39,32 +41,30 @@
               
               <!-- Product-->
               @foreach ($productos as $producto)
-              <div>
-                <div class="card product-card-alt">
-                  <div class="product-thumb">
-                    <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
-                    <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
-                      <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
-                    </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="{{url ('fotoPrincipal/' .$producto->id)}}" alt="Product">
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
-                      <div class="text-muted font-size-xs mr-1"><a class="product-meta font-weight-medium" href="#">Notebook - {{$producto->marca}}</div>
-                      <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i>
-                      </div>
+                <div>
+                  <div class="card product-card-alt">
+                    <div class="product-thumb">
+                      <button class="btn-wishlist btn-sm" type="button"><i class="czi-heart"></i></button>
+                      <div class="product-card-actions"><a class="btn btn-light btn-icon btn-shadow font-size-base mx-2" href="marketplace-single.html"><i class="czi-eye"></i></a>
+                        <button class="btn btn-light btn-icon btn-shadow font-size-base mx-2" type="button" data-toggle="toast" data-target="#cart-toast"><i class="czi-cart"></i></button>
+                      </div><a class="product-thumb-overlay" href="marketplace-single.html"></a><img src="{{url ('fotoPrincipal/' .$producto->id)}}" alt="Product">
                     </div>
-                    <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">Business Card Branding Mockup</a></h3>
-                    <div class="d-flex flex-wrap justify-content-between align-items-center">
-                      <div class="font-size-sm mr-2"><i class="czi-delivery text-muted mr-1"></i><span class="font-size-xs ml-1">Envíos a todo el país</span></div>
-                      <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">$17.<small>00</small></div>
+                    <div class="card-body">
+                      <div class="d-flex flex-wrap justify-content-between align-items-start pb-2">
+                        <div class="text-muted font-size-xs mr-1"><a class="product-meta font-weight-medium" href="#">{{$producto->categoria->nombre}} - {{$producto->marca}}</div>
+                        <div class="star-rating"><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i><i class="sr-star czi-star-filled active"></i>
+                        </div>
+                      </div>
+                      <h3 class="product-title font-size-sm mb-2"><a href="marketplace-single.html">{{$producto->nombre}}</a></h3>
+                      <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="font-size-sm mr-2"><i class="czi-delivery text-muted mr-1"></i><span class="font-size-xs ml-1">{{ __('Envíos a todo el país') }}</span></div>
+                        <div class="bg-faded-accent text-accent rounded-sm py-1 px-2">${{ $producto->precio }},<small>00</small></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              @endforeach
-              
-              <!-- Product-->
-              
+              @endforeach         
+
             </div>
           </div>
         </div>
@@ -185,34 +185,34 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-name">{{ __('Tu nombre y apellido:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control @error('nombre') is-invalid @enderror" type="text" id="cf-name" placeholder="Nombre y apellido" name="nombre" autofocus value="{{ old('nombre') }}">
+                      <input class="form-control @error('nombre') is-invalid @enderror" type="text" id="cf-name" placeholder="Nombre y apellido" name="nombre"  value="{{ old('nombre') }}">
                       <div class="invalid-feedback">{{ $errors->first('nombre')}}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-email">{{ __('Dirección de Email:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control  @error('email') is-invalid @enderror" type="email" id="cf-email" name="email" placeholder="ejemplo@email.com" autofocus value="{{ old('email') }}">
+                      <input class="form-control  @error('email') is-invalid @enderror" type="email" id="cf-email" name="email" placeholder="ejemplo@email.com"  value="{{ old('email') }}">
                       <div class="invalid-feedback">{{ $errors->first('email')}}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-phone">{{ __('Teléfono:') }}&nbsp;<span class="text-danger">*</span></label>
-                      <input class="form-control  @error('telefono') is-invalid @enderror" type="number" id="cf-phone" name="telefono" placeholder="(3541) 00 000 000" autofocus value="{{ old('telefono') }}">
+                      <input class="form-control  @error('telefono') is-invalid @enderror" type="number" id="cf-phone" name="telefono" placeholder="(3541) 00 000 000"  value="{{ old('telefono') }}">
                       <div class="invalid-feedback">{{ $errors->first('telefono')}}</div>
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label for="cf-subject">{{ __('Asunto:') }}</label>
-                      <input class="form-control  @error('asunto') is-invalid @enderror" type="text" id="cf-subject" name="asunto" placeholder="Proporcione un título breve de su solicitud" autofocus value="{{ old('asunto') }}">
+                      <input class="form-control  @error('asunto') is-invalid @enderror" type="text" id="cf-subject" name="asunto" placeholder="Proporcione un título breve de su solicitud"  value="{{ old('asunto') }}">
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="cf-message">{{ __('Mensaje:') }}&nbsp;<span class="text-danger">*</span></label>
-                  <textarea class="form-control  @error('mensaje') is-invalid @enderror" id="cf-message" rows="6" name="mensaje" placeholder="Por favor describe tu consulta" autofocus >{{ old('nombre') }}</textarea>
+                  <textarea class="form-control  @error('mensaje') is-invalid @enderror" id="cf-message" rows="6" name="mensaje" placeholder="Por favor describe tu consulta"  >{{ old('nombre') }}</textarea>
                   <div class="invalid-feedback">{{ __('Por favor ingresa mensaje!') }}</div>
                 </div>
                 <button class="btn btn-primary" type="submit">{{ __('Enviar mensaje') }}</button>

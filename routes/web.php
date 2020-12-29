@@ -39,6 +39,11 @@ Route::post('/', 'ContactoController@store')->name('contact');
 Route::get('/producto/{id}', 'IndexController@producto');
 
 // |--------------------------------------------------------------------------
+// | RUTA DE SEARCH
+// |--------------------------------------------------------------------------
+Route::get('search/', 'IndexController@search')->name('search');
+
+// |--------------------------------------------------------------------------
 // | RUTA DE CONFIGURACION DE CONTACTO
 // |--------------------------------------------------------------------------
 Route::get('admnistracion/configuraciones/contacto', 'administracion\ConfiguracionesController@contacto');

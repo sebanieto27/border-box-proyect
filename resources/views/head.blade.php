@@ -38,15 +38,15 @@
       <div class="container"><a class="navbar-brand d-none d-sm-block mr-4 order-lg-1" href="{{url ('/') }}" style="min-width: 7rem;"><img width="175" src="{{asset ('img/logo-borderBox.svg') }}" alt="Pickbazar"/></a><a class="navbar-brand d-sm-none mr-2 order-lg-1" href="{{ '/' }}" style="min-width: 4.625rem;"><img width="74" src="{{asset ('img/logo-borderBox.svg') }}" alt="BorderBox"/></a>
         <!-- Toolbar-->
         <div class="navbar-toolbar d-flex align-items-center order-lg-3">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button><a class="navbar-tool d-none d-lg-flex" href="#searchBox" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="searchBox"><span class="navbar-tool-tooltip">Buscar</span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-tool d-none d-lg-flex" href="#searchBox" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="searchBox"><span class="navbar-tool-tooltip">Buscar</span>
             <div class="navbar-tool-icon-box"><i class="navbar-tool-icon czi-search"></i></div></a>
         </div>
         <div class="collapse navbar-collapse mr-auto order-lg-2" id="navbarCollapse">
-          <!-- Search-->
-          <div class="input-group-overlay d-lg-none my-3">
-            <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
-            <input class="form-control prepended-form-control" type="text" placeholder="Buscar en la tienda">
-          </div>
+            <div class="input-group-overlay d-lg-none my-3">
+              <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
+              <input class="form-control prepended-form-control" type="text" placeholder="Buscar en la tienda">
+            </div>
           <!-- Categories dropdown-->
           {{-- <ul class="navbar-nav mega-nav pr-lg-2 mr-lg-2">
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle pl-0" href="#" data-toggle="dropdown"><i class="czi-menu align-middle mt-n1 mr-2"></i>Categories</a>
@@ -63,7 +63,7 @@
           </ul> --}}
           <!-- Primary menu-->
           <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="{{url ('contacto')}}">Contacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{url ('contacto')}}">{{ __('Contacto') }}</a></li>
           </ul>
         </div>
       </div>
@@ -73,8 +73,12 @@
       <div class="card pt-2 pb-4 border-0 rounded-0">
         <div class="container">
           <div class="input-group-overlay">
-            <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
-            <input class="form-control prepended-form-control" type="text" placeholder="Search marketplace">
+            <form action="{{ route('search') }}" method="GET" role="search">
+              {{ csrf_field() }}
+              <div class="input-group-prepend-overlay">
+                <span class="input-group-text"><i class="czi-search"></i></span></div>
+                <input class="form-control prepended-form-control" name="search" type="search" placeholder="Busca en nuestra tienda">
+            </form>
           </div>
         </div>
       </div>

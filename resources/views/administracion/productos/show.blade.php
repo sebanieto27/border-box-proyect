@@ -31,7 +31,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="">{{ __('Categoría')}}</label>
-                <p class="form-control">{{$producto->categoria ?? ''}}</p>
+                <p class="form-control">{{$producto->categoria->nombre ?? ''}}</p>
               </div>
             </div>
             <div class="form-row">

@@ -6,8 +6,8 @@
       <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-star">
-                    <li class="breadcrumb-item"><a class="text-nowrap" href="{{ '/' }}"><i class="czi-home"></i>Home</a></li>
-                    <li class="breadcrumb-item text-nowrap"><a href="*">Notebooks</a></li>
+                    <li class="breadcrumb-item"><a class="text-nowrap" href="{{ '/' }}"><i class="czi-home"></i>{{ __('Inicio') }}</a></li>
+                    <li class="breadcrumb-item text-nowrap"><a href="*">{{$producto->categoria->nombre}}</a></li>
                     <li class="breadcrumb-item text-nowrap active" aria-current="page">{{$producto->nombre}}</li>
                 </ol>
             </nav>
